@@ -1,0 +1,899 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>H2HC - Latin America's Premier Hacking Conference</title>
+    <!-- Favicon personalizado com ícone de cadeado -->
+    <link rel="icon" type="image/x-icon"
+        href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🔐</text></svg>">
+
+    <!-- CSS Framework e bibliotecas de animação -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+
+    <!-- Biblioteca de ícones -->
+    <script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>
+
+    <!-- 3D Background - Three.js e Vanta.js -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r134/three.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vanta@latest/dist/vanta.globe.min.js"></script>
+    <script src="./tailwind.js"></script>
+    <link rel="stylesheet" href="./styles.css">
+</head>
+
+<body class="matrix-bg text-gray-200 font-['JetBrains_Mono']">
+    <!-- Navigation -->
+    <nav class="bg-terminal-black/90 backdrop-blur-md sticky top-0 z-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between h-16 items-center">
+                <div class="flex-shrink-0 flex items-center">
+                    <a href="#hero"
+                        class="text-hacker-green font-['Share_Tech_Mono'] text-2xl font-bold hover:text-hacker-green/80 transition">H2HC</a>
+                    <span class="ml-2 text-sm bg-warning-red text-white px-2 py-2 rounded">BRASIL</span>
+                </div>
+                <div class="hidden md:block">
+                    <div class="ml-10 flex items-center space-x-8">
+                        <a href="#about"
+                            class="text-gray-300 hover:text-hacker-green transition terminal-text uppercase tracking-wider">Sobre</a>
+                        <a href="#speakers"
+                            class="text-gray-300 hover:text-hacker-green transition terminal-text uppercase tracking-wider">Palestrantes</a>
+                        <a href="#schedule"
+                            class="text-gray-300 hover:text-hacker-green transition terminal-text uppercase tracking-wider">Programação</a>
+                        <a href="#sponsors"
+                            class="text-gray-300 hover:text-hacker-green transition terminal-text uppercase tracking-wider">Patrocinadores</a>
+                        <a href="#tickets"
+                            class="bg-hacker-green text-terminal-black px-4 py-2 rounded-md font-bold hover:bg-opacity-80 transition terminal-text">INGRESSOS</a>
+                    </div>
+                </div>
+                <div class="md:hidden">
+                    <button id="mobile-menu" onclick="toggleMenu()">
+                        <i data-feather="menu" class="text-hacker-green"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+        <!-- Mobile Menu -->
+        <div id="mobile-nav" class="hidden md:hidden bg-terminal-black/95 p-4">
+            <div class="flex flex-col space-y-4">
+                <a href="#about" class="text-gray-300 hover:text-hacker-green transition">Sobre</a>
+                <a href="#speakers" class="text-gray-300 hover:text-hacker-green transition">Palestrantes</a>
+                <a href="#schedule" class="text-gray-300 hover:text-hacker-green transition">Programação</a>
+                <a href="#sponsors" class="text-gray-300 hover:text-hacker-green transition">Patrocinadores</a>
+                <a href="#tickets"
+                    class="bg-hacker-green text-terminal-black px-4 py-2 rounded-md font-bold text-center">Ingressos</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="hero" class="min-h-screen w-screen relative flex items-center">
+        <div id="vanta-globe" class="absolute inset-0"></div>
+        <div class="max-w-7xl mx-auto w-screen px-4 sm:px-6 lg:px-8 relative z-10 py-28">
+            <div class="text-center">
+                <a href="#hero"
+                    class="text-4xl md:text-7xl font-bold font-['Share_Tech_Mono'] mb-4 hacker-text hover:text-hacker-green/80 transition">
+                    H2HC <span class="text-matrix-blue">2025</span>
+                </a>
+                <div class="typewriter max-w-3xl mx-auto text-xl md:text-2xl mb-8">
+                    A maior conferência HACKER da América Latina
+                </div>
+                <div class="flex flex-col sm:flex-row justify-center gap-4">
+                    <a href="https://www.eventbrite.com.br/e/h2hc-hackers-2-hackers-conference-2024-21-anos-registration-928788179447"
+                        target="_blank"
+                        class="bg-hacker-green text-terminal-black px-6 py-3 rounded-md font-bold text-lg hover:bg-opacity-90 transition transform hover:scale-105 terminal-text">
+                        COMPRE AGORA
+                    </a>
+                    <button
+                        class="border-2 border-hacker-green text-hacker-green px-6 py-3 rounded-md font-bold text-lg hover:bg-hacker-green/20 transition terminal-text">
+                        VER PROGRAMAÇÃO
+                    </button>
+                </div>
+            </div>
+            <div class="mt-32 grid grid-cols-1 md:grid-cols-3 gap-8 text-center">
+                <div class="bg-terminal-black/70 p-6 rounded-lg terminal-border">
+                    <i data-feather="calendar" class="w-12 h-12 mx-auto text-hacker-green"></i>
+                    <h3 class="text-xl font-bold mt-4">13-14 Dezembro</h3>
+                    <p class="mt-2 text-gray-400">2 dias de evento</p>
+                </div>
+                <div class="bg-terminal-black/70 p-6 rounded-lg terminal-border">
+                    <i data-feather="map-pin" class="w-12 h-12 mx-auto text-matrix-blue"></i>
+                    <h3 class="text-xl font-bold mt-4">São Paulo, <span class="text-red-500">Brasil</span></h3>
+                    <p class="mt-2 text-gray-400">Novotel Center Norte</p>
+                </div>
+                <div class="bg-terminal-black/70 p-6 rounded-lg terminal-border">
+                    <i data-feather="users" class="w-12 h-12 mx-auto text-warning-red"></i>
+                    <h3 class="text-xl font-bold mt-4">Mais de 2.000 Participantes</h3>
+                    <!-- <p class="mt-2 text-gray-400">Hackers</p> -->
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="py-20 bg-terminal-black/80 backdrop-blur-sm">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-5xl font-bold font-['Share_Tech_Mono'] hacker-text">
+                    Sobre
+                </h2>
+                <div class="w-24 h-1 bg-hacker-green mx-auto mt-4"></div>
+            </div>
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+                <div class="relative">
+                    <div class="terminal-border rounded-lg overflow-hidden mx-auto">
+                        <img src="images/terror-h2hc.png" alt="H2HC Conference"
+                            class="w-full h-auto">
+                            
+                    </div>
+                    <div
+                        class="absolute -bottom-5 -right-5 bg-hacker-green text-terminal-black p-4 rounded-lg shadow-lg">
+                        <span class="font-bold text-2xl">22ª</span>
+                        <p class="text-sm">Edição</p>
+                    </div>
+                </div>
+                <div>
+                    <p class="text-gray-300 mb-6">
+                        A Hackers To Hackers Conference (H2HC) é a conferência de segurança mais antiga da América
+                        Latina, criada inicialmente
+                        para reunir amigos da internet e hoje organizada por especialistas da área, com o objetivo de
+                        disseminar e discutir
+                        conhecimentos em segurança da informação por meio de palestras, treinamentos, villages e
+                        workshops. O evento foca em
+                        apresentar novas técnicas e ferramentas, muitas vezes inéditas, para que profissionais de
+                        segurança compreendam como
+                        atacantes agem e possam se defender melhor. Defende-se que, além de aplicar correções fornecidas
+                        por fabricantes, a
+                        melhor proteção contra falhas conhecidas e desconhecidas é entender profundamente como os
+                        problemas ocorrem, permitindo
+                        criar mecanismos mais eficazes de segurança.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Speakers Section -->
+    <section id="speakers" class="py-20">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-5xl font-bold font-['Share_Tech_Mono'] hacker-text">
+                    Palestrantes</h2>
+                <div class="w-24 h-1 bg-matrix-blue mx-auto mt-4"></div>
+                <p class="max-w-2xl mx-auto mt-6 text-gray-400">
+                    Pesquisadores de segurança de renome mundial e especialistas do setor compartilham suas últimas
+                    descobertas.
+                </p>
+            </div>
+
+            <!-- Main 3 Speakers -->
+            <div id="main-speakers" class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-12">
+                <!-- Speaker 1 -->
+                <div class="bg-terminal-black/80 backdrop-blur-sm rounded-xl overflow-hidden text-center">
+                    <div class="p-6">
+                        <img src="http://static.photos/technology/320x240/101" alt="Speaker"
+                            class="w-32 h-32 rounded-full mx-auto border-4 border-hacker-green">
+                        <h3 class="text-xl font-bold mt-4">Palestrante 1</h3>
+                        <p class="text-matrix-blue">Ocupação do palestrante</p>
+                    </div>
+                </div>
+                <!-- Speaker 2 -->
+                <div class="bg-terminal-black/80 backdrop-blur-sm rounded-xl overflow-hidden text-center">
+                    <div class="p-6">
+                        <img src="http://static.photos/technology/320x240/202" alt="Speaker"
+                            class="w-32 h-32 rounded-full mx-auto border-4 border-matrix-blue">
+                        <h3 class="text-xl font-bold mt-4">Palestrante 2</h3>
+                        <p class="text-hacker-green">Ocupação do palestrante</p>
+                    </div>
+                </div>
+                <!-- Speaker 3 -->
+                <div class="bg-terminal-black/80 backdrop-blur-sm rounded-xl overflow-hidden text-center">
+                    <div class="p-6">
+                        <img src="http://static.photos/technology/320x240/303" alt="Speaker"
+                            class="w-32 h-32 rounded-full mx-auto border-4 border-warning-red">
+                        <h3 class="text-xl font-bold mt-4">Palestrante 3</h3>
+                        <p class="text-warning-red">Ocupação do palestrante</p>
+                    </div>
+                </div>
+            </div>
+
+
+            <div id="all-speakers" class="hidden grid grid-cols-1 md:grid-cols-3 gap-8 mb-12">
+                <!-- Speaker 4 -->
+                <div class="bg-terminal-black/80 backdrop-blur-sm rounded-xl overflow-hidden text-center">
+                    <div class="p-6">
+                        <img src="http://static.photos/technology/320x240/101" alt="Speaker"
+                            class="w-32 h-32 rounded-full mx-auto border-4 border-hacker-green">
+                        <h3 class="text-xl font-bold mt-4">Palestrante 1</h3>
+                        <p class="text-matrix-blue">Ocupação do palestrante</p>
+                    </div>
+                </div>
+                <!-- Speaker 5 -->
+                <div class="bg-terminal-black/80 backdrop-blur-sm rounded-xl overflow-hidden text-center">
+                    <div class="p-6">
+                        <img src="http://static.photos/technology/320x240/202" alt="Speaker"
+                            class="w-32 h-32 rounded-full mx-auto border-4 border-matrix-blue">
+                        <h3 class="text-xl font-bold mt-4">Palestrante 2</h3>
+                        <p class="text-hacker-green">Ocupação do palestrante</p>
+                    </div>
+                </div>
+                <!-- Speaker 6 -->
+                <div class="bg-terminal-black/80 backdrop-blur-sm rounded-xl overflow-hidden text-center">
+                    <div class="p-6">
+                        <img src="http://static.photos/technology/320x240/303" alt="Speaker"
+                            class="w-32 h-32 rounded-full mx-auto border-4 border-warning-red">
+                        <h3 class="text-xl font-bold mt-4">Palestrante 3</h3>
+                        <p class="text-warning-red">Ocupação do palestrante</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Show All/Show Less Button -->
+            <div class="text-center">
+                <button id="toggle-speakers"
+                    class="border-2 border-matrix-blue text-matrix-blue px-6 py-3 rounded-md font-bold hover:bg-matrix-blue/20 transition"
+                    onclick="toggleAllSpeakers()">
+                    Ver Todos os Palestrantes
+                </button>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- Schedule Section -->
+    <section id="schedule" class="py-20 bg-terminal-black/80 backdrop-blur-sm">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-5xl font-bold font-['Share_Tech_Mono'] hacker-text">
+                    Agenda do
+                    evento</h2>
+                <div class="w-24 h-1 bg-warning-red mx-auto mt-4"></div>
+                <p class="max-w-2xl mx-auto mt-6 text-gray-400">
+                    Dois dias de palestras técnicas, workshops e networking
+                </p>
+            </div>
+
+            <!-- Day Tabs -->
+            <div class="flex justify-center mb-8">
+                <div class="inline-flex rounded-md shadow-sm" role="group">
+                    <button type="button" id="day1-tab" onclick="showDay('day1')"
+                        class="px-6 py-3 text-sm font-medium rounded-l-lg bg-hacker-green text-terminal-black transition">
+                        13 Dezembro - Dia 1
+                    </button>
+                    <button type="button" id="day2-tab" onclick="showDay('day2')"
+                        class="px-6 py-3 text-sm font-medium rounded-r-lg bg-terminal-black text-gray-300 border border-gray-600 transition">
+                        14 Dezembro - Dia 2
+                    </button>
+                </div>
+            </div>
+
+            <!-- Day 1 Schedule -->
+            <div id="day1-schedule" class="space-y-4 max-w-6xl mx-auto">
+                <!-- 09:00 -->
+                <div class="bg-terminal-black/70 p-6 rounded-lg term-border">
+                    <div class="flex flex-col md:flex-row md:items-center">
+                        <div class="md:w-1/4 mb-4 md:mb-0">
+                            <div class="text-hacker-green font-bold text-lg">09:00 - 09:30</div>
+                            <div class="text-sm text-gray-400">Auditório Principal</div>
+                        </div>
+                        <div class="md:w-3/4">
+                            <h3 class="text-xl font-bold text-matrix-blue">Credenciamento e Welcome Coffee</h3>
+                            <p class="text-gray-400 mt-1">Recepção dos participantes e networking inicial</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 09:30 -->
+                <div class="bg-terminal-black/70 p-6 rounded-lg term-border">
+                    <div class="flex flex-col md:flex-row md:items-center">
+                        <div class="md:w-1/4 mb-4 md:mb-0">
+                            <div class="text-hacker-green font-bold text-lg">09:30 - 10:30</div>
+                            <div class="text-sm text-gray-400">Auditório Principal</div>
+                        </div>
+                        <div class="md:w-3/4">
+                            <h3 class="text-xl font-bold text-matrix-blue">Keynote de Abertura</h3>
+                            <p class="text-gray-400 mt-1">O Estado da Segurança Cibernética na América Latina</p>
+                            <div class="flex items-center mt-3">
+                                <div
+                                    class="w-8 h-8 rounded-full bg-hacker-green/20 mr-3 flex items-center justify-center">
+                                    <i data-feather="user" class="w-4 h-4 text-hacker-green"></i>
+                                </div>
+                                <span class="text-sm">Dr. Ricardo Santos - CISO, TechCorp</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 10:30 -->
+                <div class="bg-terminal-black/70 p-6 rounded-lg term-border"
+                    >
+                    <div class="flex flex-col md:flex-row md:items-center">
+                        <div class="md:w-1/4 mb-4 md:mb-0">
+                            <div class="text-hacker-green font-bold text-lg">10:30 - 11:00</div>
+                            <div class="text-sm text-gray-400">Coffee Break</div>
+                        </div>
+                        <div class="md:w-3/4">
+                            <h3 class="text-xl font-bold text-warning-red">Networking Break</h3>
+                            <p class="text-gray-400 mt-1">Café, networking e troca de experiências</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 11:00 -->
+                <div class="bg-terminal-black/70 p-6 rounded-lg term-border"
+                    >
+                    <div class="flex flex-col md:flex-row md:items-center">
+                        <div class="md:w-1/4 mb-4 md:mb-0">
+                            <div class="text-hacker-green font-bold text-lg">11:00 - 12:00</div>
+                            <div class="text-sm text-gray-400">Sala A & B</div>
+                        </div>
+                        <div class="md:w-3/4">
+                            <h3 class="text-xl font-bold text-matrix-blue">Trilha Dupla</h3>
+                            <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mt-2">
+                                <div class="border-l-4 border-hacker-green pl-4">
+                                    <h4 class="font-bold">Sala A: Advanced Reverse Engineering</h4>
+                                    <p class="text-gray-400 text-sm">Workshop prático de análise de malware</p>
+                                    <span class="text-xs text-hacker-green">Ana Silva - Malware Researcher</span>
+                                </div>
+                                <div class="border-l-4 border-matrix-blue pl-4">
+                                    <h4 class="font-bold">Sala B: Cloud Security Architecture</h4>
+                                    <p class="text-gray-400 text-sm">Segurança em ambientes cloud modernos</p>
+                                    <span class="text-xs text-matrix-blue">Carlos Mendoza - Cloud Architect</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 12:00 -->
+                <div class="bg-terminal-black/70 p-6 rounded-lg term-border"
+                    >
+                    <div class="flex flex-col md:flex-row md:items-center">
+                        <div class="md:w-1/4 mb-4 md:mb-0">
+                            <div class="text-hacker-green font-bold text-lg">12:00 - 13:30</div>
+                            <div class="text-sm text-gray-400">Área de Alimentação</div>
+                        </div>
+                        <div class="md:w-3/4">
+                            <h3 class="text-xl font-bold text-warning-red">Almoço</h3>
+                            <p class="text-gray-400 mt-1">Pausa para almoço e networking</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 13:30 -->
+                <div class="bg-terminal-black/70 p-6 rounded-lg term-border"
+                    >
+                    <div class="flex flex-col md:flex-row md:items-center">
+                        <div class="md:w-1/4 mb-4 md:mb-0">
+                            <div class="text-hacker-green font-bold text-lg">13:30 - 14:30</div>
+                            <div class="text-sm text-gray-400">Auditório Principal</div>
+                        </div>
+                        <div class="md:w-3/4">
+                            <h3 class="text-xl font-bold text-matrix-blue">Zero-Day Exploits in IoT Devices</h3>
+                            <p class="text-gray-400 mt-1">Demonstração de vulnerabilidades em dispositivos IoT</p>
+                            <div class="flex items-center mt-3">
+                                <div
+                                    class="w-8 h-8 rounded-full bg-warning-red/20 mr-3 flex items-center justify-center">
+                                    <i data-feather="user" class="w-4 h-4 text-warning-red"></i>
+                                </div>
+                                <span class="text-sm">Maria Rodriguez - IoT Security Researcher</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 14:30 -->
+                <div class="bg-terminal-black/70 p-6 rounded-lg term-border"
+                    >
+                    <div class="flex flex-col md:flex-row md:items-center">
+                        <div class="md:w-1/4 mb-4 md:mb-0">
+                            <div class="text-hacker-green font-bold text-lg">14:30 - 16:00</div>
+                            <div class="text-sm text-gray-400">Área CTF</div>
+                        </div>
+                        <div class="md:w-3/4">
+                            <h3 class="text-xl font-bold text-hacker-green">Capture The Flag - Início</h3>
+                            <p class="text-gray-400 mt-1">Competição de hacking com desafios práticos</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 16:00 -->
+                <div class="bg-terminal-black/70 p-6 rounded-lg term-border"
+                    >
+                    <div class="flex flex-col md:flex-row md:items-center">
+                        <div class="md:w-1/4 mb-4 md:mb-0">
+                            <div class="text-hacker-green font-bold text-lg">16:00 - 17:00</div>
+                            <div class="text-sm text-gray-400">Auditório Principal</div>
+                        </div>
+                        <div class="md:w-3/4">
+                            <h3 class="text-xl font-bold text-matrix-blue">Painel: Futuro da Privacidade Digital</h3>
+                            <p class="text-gray-400 mt-1">Discussão sobre LGPD, GDPR e marcos regulatórios</p>
+                            <div class="flex items-center mt-3">
+                                <div
+                                    class="w-8 h-8 rounded-full bg-matrix-blue/20 mr-3 flex items-center justify-center">
+                                    <i data-feather="users" class="w-4 h-4 text-matrix-blue"></i>
+                                </div>
+                                <span class="text-sm">Painel com 4 especialistas</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 17:00 -->
+                <div class="bg-terminal-black/70 p-6 rounded-lg term-border"
+                    >
+                    <div class="flex flex-col md:flex-row md:items-center">
+                        <div class="md:w-1/4 mb-4 md:mb-0">
+                            <div class="text-hacker-green font-bold text-lg">17:00 - 18:00</div>
+                            <div class="text-sm text-gray-400">Área Social</div>
+                        </div>
+                        <div class="md:w-3/4">
+                            <h3 class="text-xl font-bold text-warning-red">Happy Hour de Encerramento</h3>
+                            <p class="text-gray-400 mt-1">Networking, drinks e confraternização</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Day 2 Schedule (Initially Hidden) -->
+            <div id="day2-schedule" class="hidden space-y-4 max-w-6xl mx-auto">
+                <!-- 09:00 -->
+                <div class="bg-terminal-black/70 p-6 rounded-lg term-border">
+                    <div class="flex flex-col md:flex-row md:items-center">
+                        <div class="md:w-1/4 mb-4 md:mb-0">
+                            <div class="text-hacker-green font-bold text-lg">09:00 - 09:30</div>
+                            <div class="text-sm text-gray-400">Auditório Principal</div>
+                        </div>
+                        <div class="md:w-3/4">
+                            <h3 class="text-xl font-bold text-matrix-blue">Welcome Day 2</h3>
+                            <p class="text-gray-400 mt-1">Bom dia e coffee networking</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 09:30 -->
+                <div class="bg-terminal-black/70 p-6 rounded-lg term-border">
+                    <div class="flex flex-col md:flex-row md:items-center">
+                        <div class="md:w-1/4 mb-4 md:mb-0">
+                            <div class="text-hacker-green font-bold text-lg">09:30 - 10:30</div>
+                            <div class="text-sm text-gray-400">Auditório Principal</div>
+                        </div>
+                        <div class="md:w-3/4">
+                            <h3 class="text-xl font-bold text-matrix-blue">Advanced Persistent Threats (APT)</h3>
+                            <p class="text-gray-400 mt-1">Análise de campanhas APT na América Latina</p>
+                            <div class="flex items-center mt-3">
+                                <div
+                                    class="w-8 h-8 rounded-full bg-warning-red/20 mr-3 flex items-center justify-center">
+                                    <i data-feather="user" class="w-4 h-4 text-warning-red"></i>
+                                </div>
+                                <span class="text-sm">Dr. Paulo Henrique - Threat Intelligence</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 10:30 -->
+                <div class="bg-terminal-black/70 p-6 rounded-lg term-border"
+                    >
+                    <div class="flex flex-col md:flex-row md:items-center">
+                        <div class="md:w-1/4 mb-4 md:mb-0">
+                            <div class="text-hacker-green font-bold text-lg">10:30 - 12:00</div>
+                            <div class="text-sm text-gray-400">Sala A & B</div>
+                        </div>
+                        <div class="md:w-3/4">
+                            <h3 class="text-xl font-bold text-matrix-blue">Workshops Avançados</h3>
+                            <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mt-2">
+                                <div class="border-l-4 border-hacker-green pl-4">
+                                    <h4 class="font-bold">Sala A: Red Team Operations</h4>
+                                    <p class="text-gray-400 text-sm">Técnicas avançadas de penetration testing</p>
+                                    <span class="text-xs text-hacker-green">João Santos - Red Team Lead</span>
+                                </div>
+                                <div class="border-l-4 border-matrix-blue pl-4">
+                                    <h4 class="font-bold">Sala B: Blockchain Security</h4>
+                                    <p class="text-gray-400 text-sm">Vulnerabilidades em smart contracts</p>
+                                    <span class="text-xs text-matrix-blue">Laura Costa - Blockchain Developer</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 12:00 -->
+                <div class="bg-terminal-black/70 p-6 rounded-lg term-border"
+                    >
+                    <div class="flex flex-col md:flex-row md:items-center">
+                        <div class="md:w-1/4 mb-4 md:mb-0">
+                            <div class="text-hacker-green font-bold text-lg">12:00 - 13:30</div>
+                            <div class="text-sm text-gray-400">Área de Alimentação</div>
+                        </div>
+                        <div class="md:w-3/4">
+                            <h3 class="text-xl font-bold text-warning-red">Almoço</h3>
+                            <p class="text-gray-400 mt-1">Pausa para almoço e networking</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 13:30 -->
+                <div class="bg-terminal-black/70 p-6 rounded-lg term-border"
+                    >
+                    <div class="flex flex-col md:flex-row md:items-center">
+                        <div class="md:w-1/4 mb-4 md:mb-0">
+                            <div class="text-hacker-green font-bold text-lg">13:30 - 14:30</div>
+                            <div class="text-sm text-gray-400">Auditório Principal</div>
+                        </div>
+                        <div class="md:w-3/4">
+                            <h3 class="text-xl font-bold text-matrix-blue">AI Security: Attacks and Defense</h3>
+                            <p class="text-gray-400 mt-1">Como proteger e atacar sistemas de IA</p>
+                            <div class="flex items-center mt-3">
+                                <div
+                                    class="w-8 h-8 rounded-full bg-hacker-green/20 mr-3 flex items-center justify-center">
+                                    <i data-feather="user" class="w-4 h-4 text-hacker-green"></i>
+                                </div>
+                                <span class="text-sm">Dr. Amanda Silva - AI Security Researcher</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 14:30 -->
+                <div class="bg-terminal-black/70 p-6 rounded-lg term-border"
+                    >
+                    <div class="flex flex-col md:flex-row md:items-center">
+                        <div class="md:w-1/4 mb-4 md:mb-0">
+                            <div class="text-hacker-green font-bold text-lg">14:30 - 15:30</div>
+                            <div class="text-sm text-gray-400">Área CTF</div>
+                        </div>
+                        <div class="md:w-3/4">
+                            <h3 class="text-xl font-bold text-hacker-green">CTF - Final e Premiação</h3>
+                            <p class="text-gray-400 mt-1">Finalização da competição e premiação dos vencedores</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 15:30 -->
+                <div class="bg-terminal-black/70 p-6 rounded-lg term-border"
+                    >
+                    <div class="flex flex-col md:flex-row md:items-center">
+                        <div class="md:w-1/4 mb-4 md:mb-0">
+                            <div class="text-hacker-green font-bold text-lg">15:30 - 16:30</div>
+                            <div class="text-sm text-gray-400">Auditório Principal</div>
+                        </div>
+                        <div class="md:w-3/4">
+                            <h3 class="text-xl font-bold text-matrix-blue">Mobile Security: Beyond the Basics</h3>
+                            <p class="text-gray-400 mt-1">Técnicas avançadas de análise de apps móveis</p>
+                            <div class="flex items-center mt-3">
+                                <div
+                                    class="w-8 h-8 rounded-full bg-matrix-blue/20 mr-3 flex items-center justify-center">
+                                    <i data-feather="user" class="w-4 h-4 text-matrix-blue"></i>
+                                </div>
+                                <span class="text-sm">Roberto Lima - Mobile Security Expert</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 16:30 -->
+                <div class="bg-terminal-black/70 p-6 rounded-lg term-border"
+                    >
+                    <div class="flex flex-col md:flex-row md:items-center">
+                        <div class="md:w-1/4 mb-4 md:mb-0">
+                            <div class="text-hacker-green font-bold text-lg">16:30 - 17:30</div>
+                            <div class="text-sm text-gray-400">Auditório Principal</div>
+                        </div>
+                        <div class="md:w-3/4">
+                            <h3 class="text-xl font-bold text-warning-red">Keynote de Encerramento</h3>
+                            <p class="text-gray-400 mt-1">O Futuro da Segurança Cibernética: Próximos Desafios</p>
+                            <div class="flex items-center mt-3">
+                                <div
+                                    class="w-8 h-8 rounded-full bg-warning-red/20 mr-3 flex items-center justify-center">
+                                    <i data-feather="user" class="w-4 h-4 text-warning-red"></i>
+                                </div>
+                                <span class="text-sm">Prof. Dr. Elena Martinez - International Keynote</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 17:30 -->
+                <div class="bg-terminal-black/70 p-6 rounded-lg term-border"
+                    >
+                    <div class="flex flex-col md:flex-row md:items-center">
+                        <div class="md:w-1/4 mb-4 md:mb-0">
+                            <div class="text-hacker-green font-bold text-lg">17:30 - 19:00</div>
+                            <div class="text-sm text-gray-400">Área Social</div>
+                        </div>
+                        <div class="md:w-3/4">
+                            <h3 class="text-xl font-bold text-hacker-green">Encerramento e After Party</h3>
+                            <p class="text-gray-400 mt-1">Festa de encerramento com música, drinks e networking</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- Sponsors Section -->
+    <section id="sponsors" class="py-20">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-5xl font-bold font-['Share_Tech_Mono'] hacker-text">
+                    Patrocinadores</h2>
+                <div class="w-24 h-1 bg-hacker-green mx-auto mt-4"></div>
+            </div>
+
+            <!-- Gold Sponsors -->
+            <div class="mb-16">
+                <div class="text-center mb-8">
+                    <h3 class="text-2xl font-bold text-yellow-400 mb-2">Nível Ouro</h3>
+                    <div class="w-16 h-0.5 bg-yellow-400 mx-auto"></div>
+                </div>
+
+                <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 items-center">
+                    <div class="bg-gray-900 p-4 rounded-lg flex items-center justify-center h-28 relative group">
+                        <span class="text-lg font-bold text-yellow-400">CyberShield Elite</span>
+                        <div
+                            class="absolute inset-0 bg-gray-800 rounded-lg opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+                            <img src="http://static.photos/technology/120x60/501" alt="CyberShield Logo"
+                                class="max-w-full max-h-full object-contain">
+                        </div>
+                    </div>
+                    <div class="bg-gray-900 p-4 rounded-lg flex items-center justify-center h-28 relative group">
+                        <span class="text-lg font-bold text-yellow-400">SecureMax Pro</span>
+                        <div
+                            class="absolute inset-0 bg-gray-800 rounded-lg opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+                            <img src="http://static.photos/technology/120x60/502" alt="SecureMax Logo"
+                                class="max-w-full max-h-full object-contain">
+                        </div>
+                    </div>
+                    <div class="bg-gray-900 p-4 rounded-lg flex items-center justify-center h-28 relative group">
+                        <span class="text-lg font-bold text-yellow-400">DataGuard Premium</span>
+                        <div
+                            class="absolute inset-0 bg-gray-800 rounded-lg opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+                            <img src="http://static.photos/technology/120x60/503" alt="DataGuard Logo"
+                                class="max-w-full max-h-full object-contain">
+                        </div>
+                    </div>
+                    <div class="bg-gray-900 p-4 rounded-lg flex items-center justify-center h-28 relative group">
+                        <span class="text-lg font-bold text-yellow-400">TechSecure Gold</span>
+                        <div
+                            class="absolute inset-0 bg-gray-800 rounded-lg opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+                            <img src="http://static.photos/technology/120x60/504" alt="TechSecure Logo"
+                                class="max-w-full max-h-full object-contain">
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Silver Sponsors -->
+            <div class="mb-16">
+                <div class="text-center mb-8">
+                    <h3 class="text-2xl font-bold text-gray-300 mb-2">Nível Prata</h3>
+                    <div class="w-16 h-0.5 bg-gray-300 mx-auto"></div>
+                </div>
+                <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 items-center">
+                    <div class="bg-gray-900 p-4 rounded-lg flex items-center justify-center h-28 relative group">
+                        <span class="text-lg font-bold text-gray-300">SecureBot</span>
+                        <div
+                            class="absolute inset-0 bg-gray-800 rounded-lg opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+                            <img src="http://static.photos/technology/120x60/601" alt="SecureBot Logo"
+                                class="max-w-full max-h-full object-contain">
+                        </div>
+                    </div>
+                    <div class="bg-gray-900 p-4 rounded-lg flex items-center justify-center h-28 relative group">
+                        <span class="text-lg font-bold text-gray-300">CryptoNet</span>
+                        <div
+                            class="absolute inset-0 bg-gray-800 rounded-lg opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+                            <img src="http://static.photos/technology/120x60/602" alt="CryptoNet Logo"
+                                class="max-w-full max-h-full object-contain">
+                        </div>
+                    </div>
+                    <div class="bg-gray-900 p-4 rounded-lg flex items-center justify-center h-28 relative group">
+                        <span class="text-lg font-bold text-gray-300">ByteDefender</span>
+                        <div
+                            class="absolute inset-0 bg-gray-800 rounded-lg opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+                            <img src="http://static.photos/technology/120x60/603" alt="ByteDefender Logo"
+                                class="max-w-full max-h-full object-contain">
+                        </div>
+                    </div>
+                    <div class="bg-gray-900 p-4 rounded-lg flex items-center justify-center h-28 relative group">
+                        <span class="text-lg font-bold text-gray-300">NetShield</span>
+                        <div
+                            class="absolute inset-0 bg-gray-800 rounded-lg opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+                            <img src="http://static.photos/technology/120x60/604" alt="NetShield Logo"
+                                class="max-w-full max-h-full object-contain">
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Regular Sponsors -->
+            <div class="mb-16">
+                <div class="text-center mb-8">
+                    <h3 class="text-2xl font-bold text-gray-200 mb-2">Outros</h3>
+                    <div class="w-16 h-0.5 bg-gray-200 mx-auto"></div>
+                </div>
+                <div class="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-4 items-center">
+                    <div class="bg-gray-900 p-3 rounded-lg flex items-center justify-center h-24 relative group">
+                        <span class="text-sm font-bold text-gray-200">TechSec</span>
+                        <div
+                            class="absolute inset-0 bg-gray-800 rounded-lg opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+                            <img src="http://static.photos/technology/100x50/701" alt="TechSec Logo"
+                                class="max-w-full max-h-full object-contain">
+                        </div>
+                    </div>
+                    <div class="bg-gray-900 p-3 rounded-lg flex items-center justify-center h-24 relative group">
+                        <span class="text-sm font-bold text-gray-200">InfoGuard</span>
+                        <div
+                            class="absolute inset-0 bg-gray-800 rounded-lg opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+                            <img src="http://static.photos/technology/100x50/702" alt="InfoGuard Logo"
+                                class="max-w-full max-h-full object-contain">
+                        </div>
+                    </div>
+                    <div class="bg-gray-900 p-3 rounded-lg flex items-center justify-center h-24 relative group">
+                        <span class="text-sm font-bold text-gray-200">CyberTech</span>
+                        <div
+                            class="absolute inset-0 bg-gray-800 rounded-lg opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+                            <img src="http://static.photos/technology/100x50/703" alt="CyberTech Logo"
+                                class="max-w-full max-h-full object-contain">
+                        </div>
+                    </div>
+                    <div class="bg-gray-900 p-3 rounded-lg flex items-center justify-center h-24 relative group">
+                        <span class="text-sm font-bold text-gray-200">SecureLab</span>
+                        <div
+                            class="absolute inset-0 bg-gray-800 rounded-lg opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+                            <img src="http://static.photos/technology/100x50/704" alt="SecureLab Logo"
+                                class="max-w-full max-h-full object-contain">
+                        </div>
+                    </div>
+                    <div class="bg-gray-900 p-3 rounded-lg flex items-center justify-center h-24 relative group">
+                        <span class="text-sm font-bold text-gray-200">NetSecure</span>
+                        <div
+                            class="absolute inset-0 bg-gray-800 rounded-lg opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+                            <img src="http://static.photos/technology/100x50/705" alt="NetSecure Logo"
+                                class="max-w-full max-h-full object-contain">
+                        </div>
+                    </div>
+                    <div class="bg-gray-900 p-3 rounded-lg flex items-center justify-center h-24 relative group">
+                        <span class="text-sm font-bold text-gray-200">DataShield</span>
+                        <div
+                            class="absolute inset-0 bg-gray-800 rounded-lg opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+                            <img src="http://static.photos/technology/100x50/706" alt="DataShield Logo"
+                                class="max-w-full max-h-full object-contain">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        <div class="text-center mt-16">
+            <h3 class="text-xl font-bold text-matrix-blue mb-6">Patrocine</h3>
+            <p class="max-w-2xl mx-auto text-gray-400 mb-8">
+                Junte-se aos líderes do setor para apoiar a comunidade de segurança cibernética da América Latina.
+                Divulgue sua marca para
+                profissionais de segurança, pesquisadores e hackers.
+            </p>
+            <button
+                class="bg-matrix-blue text-terminal-black px-6 py-3 rounded-md font-bold hover:bg-opacity-90 transition">
+                Download do mídia kit 
+            </button>
+        </div>
+    </section>
+
+
+    <!-- CTA Section -->
+    <section id="tickets" class="py-20 bg-gradient-to-r from-terminal-black to-gray-900">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-5xl font-bold font-['Share_Tech_Mono'] hacker-text">
+                    Compre seu
+                    ingresso</h2>
+                <div class="w-24 h-1 bg-hacker-green mx-auto mt-4"></div>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl mx-auto">
+                <!-- Ticket Tier 1 - Pesquisadores -->
+                <div class="bg-terminal-black/80 backdrop-blur-sm rounded-xl overflow-hidden terminal-border flex flex-col h-full">
+                    <div class="p-8 flex-1 flex flex-col">
+                        <h3 class="text-2xl font-bold text-center text-hacker-green">Pesquisadores</h3>
+                        <div class="text-center my-6 flex-1">
+                            <p class="text-gray-300 text-lg">Desconto para pesquisadores com CVE</p>
+                        </div>
+                        <button
+                            class="w-full bg-hacker-green text-terminal-black py-3 rounded-md font-bold hover:bg-opacity-90 transition mt-auto"
+                            onclick="window.open('https://www.eventbrite.com.br/e/h2hc-hackers-2-hackers-conference-2024-21-anos-registration-928788179447', '_blank')">
+                            Comprar Ingresso
+                        </button>
+                    </div>
+                </div>
+                <!-- Ticket Tier 2 - Normal (Highlighted) -->
+                <div class="bg-terminal-black/80 backdrop-blur-sm rounded-xl overflow-hidden border-2 border-hacker-green shadow-lg shadow-hacker-green/30 flex flex-col h-full relative">
+                    <div class="p-8 flex-1 flex flex-col">
+                        <div
+                            class="absolute top-0 right-0 bg-hacker-green text-terminal-black px-4 py-1 text-sm font-bold rounded-bl-lg">
+                            Recomendado
+                        </div>
+                        <h3 class="text-2xl font-bold text-center text-hacker-green">Normal</h3>
+                        <div class="text-center my-6 flex-1">
+                            <p class="text-gray-300 text-lg">Acesso completo ao evento</p>
+                        </div>
+                        <button
+                            class="w-full bg-hacker-green text-terminal-black py-3 rounded-md font-bold hover:bg-opacity-90 transition mt-auto"
+                            onclick="window.open('https://www.eventbrite.com.br/e/h2hc-hackers-2-hackers-conference-2024-21-anos-registration-928788179447', '_blank')">
+                            Comprar Ingresso
+                        </button>
+                    </div>
+                </div>
+                <!-- Ticket Tier 3 - Digital Influencer -->
+                <div class="bg-terminal-black/80 backdrop-blur-sm rounded-xl overflow-hidden terminal-border flex flex-col h-full">
+                    <div class="p-8 flex-1 flex flex-col">
+                        <h3 class="text-2xl font-bold text-center text-hacker-green">Influencer</h3>
+                        <div class="text-center my-6 flex-1">
+                            <p class="text-gray-300 text-lg">Para influenciadores digitais</p>
+                        </div>
+                        <button
+                            class="w-full bg-hacker-green text-terminal-black py-3 rounded-md font-bold hover:bg-opacity-90 transition mt-auto"
+                            onclick="this.innerHTML = '<span class=\'inline-block mr-2 animate-spin\'>↻</span>Carregando...'">
+                            Comprar Ingresso
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-terminal-black py-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div>
+                    <h4 class="text-lg font-bold mb-4">Localização</h4>
+                    <ul class="space-y-2">
+                        <li class="flex items-center">
+                            <i data-feather="map-pin" class="mr-2 text-gray-400"></i>
+                            <a href="https://maps.google.com/?q=Av.+Zaki+Narchi,+500+Vila+Guilherme+Sao+Paulo,+SP+02029-000"
+                                target="_blank" class="text-gray-400 hover:text-hacker-green transition">
+                                Novotel Center Norte
+                            </a>
+                        </li>
+                        <li class="flex items-center">
+                            <i data-feather="calendar" class="mr-2 text-gray-400"></i>
+                            <span class="text-gray-400">13-14 Dezembro 2025</span>
+                        </li>
+                        <li class="flex items-center">
+                            <i data-feather="clock" class="mr-2 text-gray-400"></i>
+                            <span class="text-gray-400">São Paulo, <span class="text-hacker-green">Brasil</span></span>
+                        </li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-lg font-bold mb-4">Contato</h4>
+                    <ul class="space-y-2">
+                        <li class="flex items-center">
+                            <i data-feather="mail" class="mr-2 text-gray-400"></i>
+                            <span class="text-gray-400">contact@h2hc.tech</span>
+                        </li>
+                        <li class="flex items-center">
+                            <i data-feather="instagram" class="mr-2 text-gray-400"></i>
+                            <span class="text-gray-400">@h2hconference</span>
+                        </li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-lg font-bold mb-4">Call for Papers</h4>
+                    <p class="text-gray-400 mb-4">Submeta sua proposta de palestra</p>
+                    <a href="https://forms.google.com/h2hc-cfp"
+                        class="bg-hacker-green text-terminal-black px-4 py-2 rounded-md font-bold hover:bg-opacity-90 transition">
+                        Submeter
+                    </a>
+                </div>
+            </div>
+            <div class="border-t border-gray-800 mt-12 pt-8 text-center text-gray-500">
+                <p>© 2025 H2HC - Hackers to Hackers Conference. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+
+</body>
+<script src="./index.js"></script>
+</html>

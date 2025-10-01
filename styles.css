@@ -1,0 +1,143 @@
+/* Importação das fontes do Google - Terminal Style */
+/* JetBrains Mono: Fonte principal para corpo do texto */
+/* Share Tech Mono: Fonte para títulos com aparência futurista/terminal */
+/* Fira Code: Fonte para código e elementos técnicos */
+@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;700&family=Share+Tech+Mono&family=Fira+Code:wght@400;700&display=swap');
+
+/* Background com padrão de pontos tipo matrix em tons vermelhos */
+.matrix-bg {
+    background-color: #0a0e12;
+    background-image: radial-gradient(#dc262630 1px, transparent 1px),
+        radial-gradient(#ef444420 1px, transparent 1px);
+    background-size: 40px 40px;
+    background-position: 0 0, 20px 20px;
+}
+
+/* Borda animada tipo terminal hacker */
+.terminal-border {
+    position: relative;
+    overflow: hidden;
+}
+
+/* Animação da borda superior */
+.terminal-border::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background: linear-gradient(90deg, transparent, #dc2626);
+    animation: borderTop 3s linear infinite;
+}
+
+/* Animação da borda inferior */
+.terminal-border::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    width: 100%;
+    height: 2px;
+    background: linear-gradient(270deg, transparent, #ef4444);
+    animation: borderBottom 3s linear infinite;
+}
+
+/* Container: mantém posicionamento, sem overflow escondido */
+.term-border {
+    position: relative;
+    overflow: visible; /* permite que a linha fique visível junto ao border-radius */
+}
+
+/* Linha estática no topo (espessura: 2px). 
+        Use #dc2626 (red-600) para ficar similar ao warning-red; troque por var(--warning-red) se preferir. */
+.term-border::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 2px; /* espessura da linha (ajuste para 1px se quiser mais fino) */
+    background: #dc2626; /* cor da linha */
+    border-top-left-radius: 0.5rem; /* corresponde ao rounded-lg do Tailwind */
+    border-top-right-radius: 0.5rem;
+    pointer-events: none;
+}
+
+/* Garantir que a pseudo-element inferior (se existir) não apareça */
+.term-border::after {
+    display: none !important;
+}
+
+/* Keyframes para animação da borda superior */
+@keyframes borderTop {
+    0% {
+        transform: translateX(-100%);
+    }
+
+    100% {
+        transform: translateX(100%);
+    }
+}
+
+/* Keyframes para animação da borda inferior */
+@keyframes borderBottom {
+    0% {
+        transform: translateX(100%);
+    }
+
+    100% {
+        transform: translateX(-100%);
+    }
+}
+
+/* Efeito de brilho para textos importantes */
+.hacker-text {
+    text-shadow: 0 0 5px #dc2626, 0 0 10px #b91c1c, 0 0 20px #991b1b;
+}
+
+/* Efeito de máquina de escrever para o subtitle */
+.typewriter {
+    overflow: hidden;
+    border-right: 0.15em solid #dc2626;
+    white-space: nowrap;
+    animation: typing 3.5s steps(50, end), blink-caret 0.75s step-end infinite;
+    font-family: 'Fira Code', monospace;
+    letter-spacing: 0.05em;
+}
+
+/* Estilo terminal para textos importantes */
+.terminal-text {
+    font-family: 'JetBrains Mono', monospace;
+    letter-spacing: 0.05em;
+}
+
+/* Estilo para títulos com aparência de terminal */
+.terminal-title {
+    font-family: 'Share Tech Mono', monospace;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+}
+
+/* Animação de digitação */
+@keyframes typing {
+    from {
+        width: 0;
+    }
+
+    to {
+        width: 100%;
+    }
+}
+
+/* Animação do cursor piscando */
+@keyframes blink-caret {
+    from,
+    to {
+        border-color: transparent;
+    }
+
+    50% {
+        border-color: #b91c1c;
+    }
+}
