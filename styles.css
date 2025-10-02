@@ -1,6 +1,10 @@
 /* Importação das fontes do Google - Terminal Style */
 @import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;700&family=Share+Tech+Mono&family=Fira+Code:wght@400;700&display=swap');
 
+html {
+  overflow-x: hidden;
+}
+
 /* Background com padrão de pontos em tons vermelhos */
 .dotted-pattern-bg {
   background-color: #0a0e12;
