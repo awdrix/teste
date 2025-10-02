@@ -2,16 +2,15 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>H2HC - Latin America's Premier Hacking Conference</title>
     <!-- Favicon personalizado com ícone de cadeado -->
-    <link rel="icon" type="image/x-icon"
-        href="images/logo-h2hcbgblack.png">
+    <link rel="icon" type="image/x-icon" href="images/logo-h2hcbgblack.png" />
 
     <!-- CSS Framework e bibliotecas de animação -->
     <script src="https://cdn.tailwindcss.com"></script>
-    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
 
     <!-- Biblioteca de ícones -->
@@ -21,7 +20,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r134/three.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/vanta@latest/dist/vanta.globe.min.js"></script>
     <script src="./tailwind.js"></script>
-    <link rel="stylesheet" href="./styles.css">
+    <link rel="stylesheet" href="./styles.css" />
 </head>
 
 <body class="dotted-pattern-bg text-gray-200 font-['JetBrains_Mono']">
@@ -30,21 +29,23 @@
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex justify-between h-16 items-center">
                 <div class="flex-shrink-0 flex items-center">
-                    <a href="#hero"
+                    <a href="index.html"
                         class="text-hacker-green font-['Share_Tech_Mono'] text-2xl font-bold hover:text-hacker-green/80 transition">H2HC</a>
                     <span class="ml-2 text-sm bg-warning-red text-white px-2 py-2 rounded">BRASIL</span>
                 </div>
                 <div class="hidden md:block">
                     <div class="ml-10 flex items-center space-x-8">
-                        <a href="#about"
+                        <a href="about.html"
                             class="text-gray-300 hover:text-hacker-green transition text-mono uppercase tracking-wider">Sobre</a>
-                        <a href="#speakers"
+                        <a href="speakers.html"
                             class="text-gray-300 hover:text-hacker-green transition text-mono uppercase tracking-wider">Palestrantes</a>
-                        <a href="#schedule"
+                        <a href="schedule.html"
                             class="text-gray-300 hover:text-hacker-green transition text-mono uppercase tracking-wider">Programação</a>
-                        <a href="#sponsors"
+                        <a href="sponsors.html"
                             class="text-gray-300 hover:text-hacker-green transition text-mono uppercase tracking-wider">Patrocinadores</a>
-                        <a href="#tickets"
+                        <a href="magazines.html"
+                            class="text-gray-300 hover:text-hacker-green transition text-mono uppercase tracking-wider">Revistas</a>                        
+                        <a href="tickets.html"
                             class="bg-hacker-green text-terminal-black px-4 py-2 rounded-md font-bold hover:bg-opacity-80 transition text-mono">INGRESSOS</a>
                     </div>
                 </div>
@@ -58,11 +59,13 @@
         <!-- Mobile Menu -->
         <div id="mobile-nav" class="hidden md:hidden bg-terminal-black/95 p-4">
             <div class="flex flex-col space-y-4">
-                <a href="#about" class="text-gray-300 hover:text-hacker-green transition">Sobre</a>
-                <a href="#speakers" class="text-gray-300 hover:text-hacker-green transition">Palestrantes</a>
-                <a href="#schedule" class="text-gray-300 hover:text-hacker-green transition">Programação</a>
-                <a href="#sponsors" class="text-gray-300 hover:text-hacker-green transition">Patrocinadores</a>
-                <a href="#tickets" class="bg-hacker-green text-terminal-black px-4 py-2 rounded-md font-bold text-center">Ingressos</a>
+                <a href="about.html" class="text-gray-300 hover:text-hacker-green transition">Sobre</a>
+                <a href="speakers.html" class="text-gray-300 hover:text-hacker-green transition">Palestrantes</a>
+                <a href="schedule.html" class="text-gray-300 hover:text-hacker-green transition">Programação</a>
+                <a href="sponsors.html" class="text-gray-300 hover:text-hacker-green transition">Patrocinadores</a>
+                <a href="magazines.html" class="text-gray-300 hover:text-hacker-green transition">Revistas</a>
+                <a href="tickets.html"
+                    class="bg-hacker-green text-terminal-black px-4 py-2 rounded-md font-bold text-center">Ingressos</a>
             </div>
         </div>
     </nav>
@@ -72,7 +75,7 @@
         <div id="vanta-globe" class="absolute inset-0"></div>
         <div class="max-w-7xl mx-auto w-screen px-4 sm:px-6 lg:px-8 relative z-10 py-28">
             <div class="text-center">
-                <a href="#hero"
+                <a href="index.html"
                     class="text-4xl md:text-7xl font-bold font-['Share_Tech_Mono'] mb-4 text-glow-red hover:text-hacker-green/80 transition">
                     H2HC <span class="text-matrix-blue">2025</span>
                 </a>
@@ -100,8 +103,8 @@
                 <div class="bg-terminal-black/70 p-6 rounded-lg animated-border">
                     <i data-feather="map-pin" class="w-12 h-12 mx-auto text-matrix-blue"></i>
                     <a href="https://maps.google.com/?q=Av.+Zaki+Narchi,+500+Vila+Guilherme+Sao+Paulo,+SP+02029-000">
-                    <h3 class="text-xl font-bold mt-4">São Paulo, <span class="text-red-500">Brasil</span></h3>
-                    <p class="mt-2 text-gray-400">Novotel Center Norte</p>
+                        <h3 class="text-xl font-bold mt-4">São Paulo, <span class="text-red-500">Brasil</span></h3>
+                        <p class="mt-2 text-gray-400">Novotel Center Norte</p>
                     </a>
                 </div>
                 <div class="bg-terminal-black/70 p-6 rounded-lg animated-border">
@@ -125,9 +128,8 @@
             <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
                 <div class="relative">
                     <div class="animated-border rounded-lg overflow-hidden mx-auto">
-                        <img src="images/terror-h2hc.png" alt="H2HC Conference"
-                            class="w-full h-auto">
-                            
+                        <img src="images/terror-h2hc.png" alt="H2HC Conference" class="w-full h-auto">
+
                     </div>
                     <div
                         class="absolute -bottom-5 -right-5 bg-hacker-green text-terminal-black p-4 rounded-lg shadow-lg">
@@ -308,8 +310,7 @@
                 </div>
 
                 <!-- 10:30 -->
-                <div class="bg-terminal-black/70 p-6 rounded-lg static-top-border"
-                    >
+                <div class="bg-terminal-black/70 p-6 rounded-lg static-top-border">
                     <div class="flex flex-col md:flex-row md:items-center">
                         <div class="md:w-1/4 mb-4 md:mb-0">
                             <div class="text-hacker-green font-bold text-lg">10:30 - 11:00</div>
@@ -323,8 +324,7 @@
                 </div>
 
                 <!-- 11:00 -->
-                <div class="bg-terminal-black/70 p-6 rounded-lg static-top-border"
-                    >
+                <div class="bg-terminal-black/70 p-6 rounded-lg static-top-border">
                     <div class="flex flex-col md:flex-row md:items-center">
                         <div class="md:w-1/4 mb-4 md:mb-0">
                             <div class="text-hacker-green font-bold text-lg">11:00 - 12:00</div>
@@ -349,8 +349,7 @@
                 </div>
 
                 <!-- 12:00 -->
-                <div class="bg-terminal-black/70 p-6 rounded-lg static-top-border"
-                    >
+                <div class="bg-terminal-black/70 p-6 rounded-lg static-top-border">
                     <div class="flex flex-col md:flex-row md:items-center">
                         <div class="md:w-1/4 mb-4 md:mb-0">
                             <div class="text-hacker-green font-bold text-lg">12:00 - 13:30</div>
@@ -364,8 +363,7 @@
                 </div>
 
                 <!-- 13:30 -->
-                <div class="bg-terminal-black/70 p-6 rounded-lg static-top-border"
-                    >
+                <div class="bg-terminal-black/70 p-6 rounded-lg static-top-border">
                     <div class="flex flex-col md:flex-row md:items-center">
                         <div class="md:w-1/4 mb-4 md:mb-0">
                             <div class="text-hacker-green font-bold text-lg">13:30 - 14:30</div>
@@ -386,8 +384,7 @@
                 </div>
 
                 <!-- 14:30 -->
-                <div class="bg-terminal-black/70 p-6 rounded-lg static-top-border"
-                    >
+                <div class="bg-terminal-black/70 p-6 rounded-lg static-top-border">
                     <div class="flex flex-col md:flex-row md:items-center">
                         <div class="md:w-1/4 mb-4 md:mb-0">
                             <div class="text-hacker-green font-bold text-lg">14:30 - 16:00</div>
@@ -401,8 +398,7 @@
                 </div>
 
                 <!-- 16:00 -->
-                <div class="bg-terminal-black/70 p-6 rounded-lg static-top-border"
-                    >
+                <div class="bg-terminal-black/70 p-6 rounded-lg static-top-border">
                     <div class="flex flex-col md:flex-row md:items-center">
                         <div class="md:w-1/4 mb-4 md:mb-0">
                             <div class="text-hacker-green font-bold text-lg">16:00 - 17:00</div>
@@ -423,8 +419,7 @@
                 </div>
 
                 <!-- 17:00 -->
-                <div class="bg-terminal-black/70 p-6 rounded-lg static-top-border"
-                    >
+                <div class="bg-terminal-black/70 p-6 rounded-lg static-top-border">
                     <div class="flex flex-col md:flex-row md:items-center">
                         <div class="md:w-1/4 mb-4 md:mb-0">
                             <div class="text-hacker-green font-bold text-lg">17:00 - 18:00</div>
@@ -476,8 +471,7 @@
                 </div>
 
                 <!-- 10:30 -->
-                <div class="bg-terminal-black/70 p-6 rounded-lg static-top-border"
-                    >
+                <div class="bg-terminal-black/70 p-6 rounded-lg static-top-border">
                     <div class="flex flex-col md:flex-row md:items-center">
                         <div class="md:w-1/4 mb-4 md:mb-0">
                             <div class="text-hacker-green font-bold text-lg">10:30 - 12:00</div>
@@ -502,8 +496,7 @@
                 </div>
 
                 <!-- 12:00 -->
-                <div class="bg-terminal-black/70 p-6 rounded-lg static-top-border"
-                    >
+                <div class="bg-terminal-black/70 p-6 rounded-lg static-top-border">
                     <div class="flex flex-col md:flex-row md:items-center">
                         <div class="md:w-1/4 mb-4 md:mb-0">
                             <div class="text-hacker-green font-bold text-lg">12:00 - 13:30</div>
@@ -517,8 +510,7 @@
                 </div>
 
                 <!-- 13:30 -->
-                <div class="bg-terminal-black/70 p-6 rounded-lg static-top-border"
-                    >
+                <div class="bg-terminal-black/70 p-6 rounded-lg static-top-border">
                     <div class="flex flex-col md:flex-row md:items-center">
                         <div class="md:w-1/4 mb-4 md:mb-0">
                             <div class="text-hacker-green font-bold text-lg">13:30 - 14:30</div>
@@ -539,8 +531,7 @@
                 </div>
 
                 <!-- 14:30 -->
-                <div class="bg-terminal-black/70 p-6 rounded-lg static-top-border"
-                    >
+                <div class="bg-terminal-black/70 p-6 rounded-lg static-top-border">
                     <div class="flex flex-col md:flex-row md:items-center">
                         <div class="md:w-1/4 mb-4 md:mb-0">
                             <div class="text-hacker-green font-bold text-lg">14:30 - 15:30</div>
@@ -554,8 +545,7 @@
                 </div>
 
                 <!-- 15:30 -->
-                <div class="bg-terminal-black/70 p-6 rounded-lg static-top-border"
-                    >
+                <div class="bg-terminal-black/70 p-6 rounded-lg static-top-border">
                     <div class="flex flex-col md:flex-row md:items-center">
                         <div class="md:w-1/4 mb-4 md:mb-0">
                             <div class="text-hacker-green font-bold text-lg">15:30 - 16:30</div>
@@ -576,8 +566,7 @@
                 </div>
 
                 <!-- 16:30 -->
-                <div class="bg-terminal-black/70 p-6 rounded-lg static-top-border"
-                    >
+                <div class="bg-terminal-black/70 p-6 rounded-lg static-top-border">
                     <div class="flex flex-col md:flex-row md:items-center">
                         <div class="md:w-1/4 mb-4 md:mb-0">
                             <div class="text-hacker-green font-bold text-lg">16:30 - 17:30</div>
@@ -598,8 +587,7 @@
                 </div>
 
                 <!-- 17:30 -->
-                <div class="bg-terminal-black/70 p-6 rounded-lg static-top-border"
-                    >
+                <div class="bg-terminal-black/70 p-6 rounded-lg static-top-border">
                     <div class="flex flex-col md:flex-row md:items-center">
                         <div class="md:w-1/4 mb-4 md:mb-0">
                             <div class="text-hacker-green font-bold text-lg">17:30 - 19:00</div>
@@ -767,18 +755,18 @@
                     </div>
                 </div>
             </div>
-        <div class="text-center mt-16">
-            <h3 class="text-xl font-bold text-matrix-blue mb-6">Patrocine</h3>
-            <p class="max-w-2xl mx-auto text-gray-400 mb-8">
-                Junte-se aos líderes do setor para apoiar a comunidade de segurança cibernética da América Latina.
-                Divulgue sua marca para
-                profissionais de segurança, pesquisadores e hackers.
-            </p>
-            <button
-                class="bg-matrix-blue text-terminal-black px-6 py-3 rounded-md font-bold hover:bg-opacity-90 transition">
-                Download do mídia kit 
-            </button>
-        </div>
+            <div class="text-center mt-16">
+                <h3 class="text-xl font-bold text-matrix-blue mb-6">Patrocine</h3>
+                <p class="max-w-2xl mx-auto text-gray-400 mb-8">
+                    Junte-se aos líderes do setor para apoiar a comunidade de segurança cibernética da América Latina.
+                    Divulgue sua marca para
+                    profissionais de segurança, pesquisadores e hackers.
+                </p>
+                <button
+                    class="bg-matrix-blue text-terminal-black px-6 py-3 rounded-md font-bold hover:bg-opacity-90 transition">
+                    Download do mídia kit
+                </button>
+            </div>
     </section>
 
 
@@ -793,7 +781,8 @@
             </div>
             <div class="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl mx-auto">
                 <!-- Ticket Tier 1 - Pesquisadores -->
-                <div class="bg-terminal-black/80 backdrop-blur-sm rounded-xl overflow-hidden animated-border flex flex-col h-full">
+                <div
+                    class="bg-terminal-black/80 backdrop-blur-sm rounded-xl overflow-hidden animated-border flex flex-col h-full">
                     <div class="p-8 flex-1 flex flex-col">
                         <h3 class="text-2xl font-bold text-center text-hacker-green">Pesquisadores</h3>
                         <div class="text-center my-6 flex-1">
@@ -807,7 +796,8 @@
                     </div>
                 </div>
                 <!-- Ticket Tier 2 - Normal (Highlighted) -->
-                <div class="bg-terminal-black/80 backdrop-blur-sm rounded-xl overflow-hidden border-2 border-hacker-green shadow-lg shadow-hacker-green/30 flex flex-col h-full relative">
+                <div
+                    class="bg-terminal-black/80 backdrop-blur-sm rounded-xl overflow-hidden border-2 border-hacker-green shadow-lg shadow-hacker-green/30 flex flex-col h-full relative">
                     <div class="p-8 flex-1 flex flex-col">
                         <div
                             class="absolute top-0 right-0 bg-hacker-green text-terminal-black px-4 py-1 text-sm font-bold rounded-bl-lg">
@@ -825,7 +815,8 @@
                     </div>
                 </div>
                 <!-- Ticket Tier 3 - Digital Influencer -->
-                <div class="bg-terminal-black/80 backdrop-blur-sm rounded-xl overflow-hidden animated-border flex flex-col h-full">
+                <div
+                    class="bg-terminal-black/80 backdrop-blur-sm rounded-xl overflow-hidden animated-border flex flex-col h-full">
                     <div class="p-8 flex-1 flex flex-col">
                         <h3 class="text-2xl font-bold text-center text-hacker-green">Influencer</h3>
                         <div class="text-center my-6 flex-1">
@@ -845,7 +836,7 @@
     <!-- Footer -->
     <footer class="bg-terminal-black py-12">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
                 <div>
                     <h4 class="text-lg font-bold mb-4">Localização</h4>
                     <ul class="space-y-2">
@@ -887,6 +878,46 @@
                         Submeter
                     </a>
                 </div>
+                <div>
+                    <h4 class="text-lg font-bold mb-4">Social</h4>
+                    <ul class="space-y-2">
+                        <li class="flex items-center">
+                            <i data-feather="twitter" class="mr-2 text-gray-400"></i>
+                            <a href="https://twitter.com/h2hconference" target="_blank"
+                                class="text-gray-400 hover:text-hacker-green transition">
+                                Twitter
+                            </a>
+                        </li>
+                        <li class="flex items-center">
+                            <i data-feather="facebook" class="mr-2 text-gray-400"></i>
+                            <a href="https://www.facebook.com/h2hconference" target="_blank"
+                                class="text-gray-400 hover:text-hacker-green transition">
+                                Facebook
+                            </a>
+                        </li>
+                        <li class="flex items-center">
+                            <i data-feather="instagram" class="mr-2 text-gray-400"></i>
+                            <a href="https://www.instagram.com/h2hconference/" target="_blank"
+                                class="text-gray-400 hover:text-hacker-green transition">
+                                Instagram
+                            </a>
+                        </li>
+                        <li class="flex items-center">
+                            <i data-feather="send" class="mr-2 text-gray-400"></i>
+                            <a href="https://t.me/h2hconference" target="_blank"
+                                class="text-gray-400 hover:text-hacker-green transition">
+                                Telegram
+                            </a>
+                        </li>
+                        <li class="flex items-center">
+                            <i data-feather="youtube" class="mr-2 text-gray-400"></i>
+                            <a href="https://www.youtube.com/h2hconference" target="_blank"
+                                class="text-gray-400 hover:text-hacker-green transition">
+                                YouTube
+                            </a>
+                        </li>
+                    </ul>
+                </div>
             </div>
             <div class="border-t border-gray-800 mt-12 pt-8 text-center text-gray-500">
                 <p>© 2025 H2HC - Hackers to Hackers Conference. All rights reserved.</p>
@@ -894,7 +925,8 @@
         </div>
     </footer>
 
-
 </body>
+
 <script src="./index.js"></script>
+
 </html>

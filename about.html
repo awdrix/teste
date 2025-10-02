@@ -1,484 +1,360 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>H2HC - Latin America's Premier Hacking Conference</title>
-        <!-- Favicon personalizado com ícone de cadeado -->
-        <link
-            rel="icon"
-            type="image/x-icon"
-            href="images/logo-h2hcbgblack.png"
-        />
 
-        <!-- CSS Framework e bibliotecas de animação -->
-        <script src="https://cdn.tailwindcss.com"></script>
-        <link
-            href="https://unpkg.com/aos@2.3.1/dist/aos.css"
-            rel="stylesheet"
-        />
-        <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>H2HC - Latin America's Premier Hacking Conference</title>
+    <!-- Favicon personalizado com ícone de cadeado -->
+    <link rel="icon" type="image/x-icon" href="images/logo-h2hcbgblack.png" />
 
-        <!-- Biblioteca de ícones -->
-        <script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>
+    <!-- CSS Framework e bibliotecas de animação -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
 
-        <!-- 3D Background - Three.js e Vanta.js -->
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r134/three.min.js"></script>
-        <script src="https://cdn.jsdelivr.net/npm/vanta@latest/dist/vanta.globe.min.js"></script>
-        <script src="./tailwind.js"></script>
-        <link rel="stylesheet" href="./styles.css" />
-    </head>
+    <!-- Biblioteca de ícones -->
+    <script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>
 
-    <body class="dotted-pattern-bg text-gray-200 font-['JetBrains_Mono']">
-        <!-- Navigation -->
-        <nav class="bg-terminal-black/90 backdrop-blur-md sticky top-0 z-50">
-            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                <div class="flex justify-between h-16 items-center">
-                    <div class="flex-shrink-0 flex items-center">
-                        <a
-                            href="#hero"
-                            class="text-hacker-green font-['Share_Tech_Mono'] text-2xl font-bold hover:text-hacker-green/80 transition"
-                            >H2HC</a
-                        >
-                        <span
-                            class="ml-2 text-sm bg-warning-red text-white px-2 py-2 rounded"
-                            >BRASIL</span
-                        >
-                    </div>
-                    <div class="hidden md:block">
-                        <div class="ml-10 flex items-center space-x-8">
-                            <a
-                                href="#about"
-                                class="text-gray-300 hover:text-hacker-green transition text-mono uppercase tracking-wider"
-                                >Sobre</a
-                            >
-                            <a
-                                href="#speakers"
-                                class="text-gray-300 hover:text-hacker-green transition text-mono uppercase tracking-wider"
-                                >Palestrantes</a
-                            >
-                            <a
-                                href="#schedule"
-                                class="text-gray-300 hover:text-hacker-green transition text-mono uppercase tracking-wider"
-                                >Programação</a
-                            >
-                            <a
-                                href="#sponsors"
-                                class="text-gray-300 hover:text-hacker-green transition text-mono uppercase tracking-wider"
-                                >Patrocinadores</a
-                            >
-                            <a
-                                href="#tickets"
-                                class="bg-hacker-green text-terminal-black px-4 py-2 rounded-md font-bold hover:bg-opacity-80 transition text-mono"
-                                >INGRESSOS</a
-                            >
-                        </div>
-                    </div>
-                    <div class="md:hidden">
-                        <button id="mobile-menu" onclick="toggleMenu()">
-                            <i
-                                data-feather="menu"
-                                class="text-hacker-green"
-                            ></i>
-                        </button>
+    <!-- 3D Background - Three.js e Vanta.js -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r134/three.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vanta@latest/dist/vanta.globe.min.js"></script>
+    <script src="./tailwind.js"></script>
+    <link rel="stylesheet" href="./styles.css" />
+</head>
+
+<body class="dotted-pattern-bg text-gray-200 font-['JetBrains_Mono']">
+    <!-- Navigation -->
+    <nav class="bg-terminal-black/90 backdrop-blur-md sticky top-0 z-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between h-16 items-center">
+                <div class="flex-shrink-0 flex items-center">
+                    <a href="index.html"
+                        class="text-hacker-green font-['Share_Tech_Mono'] text-2xl font-bold hover:text-hacker-green/80 transition">H2HC</a>
+                    <span class="ml-2 text-sm bg-warning-red text-white px-2 py-2 rounded">BRASIL</span>
+                </div>
+                <div class="hidden md:block">
+                    <div class="ml-10 flex items-center space-x-8">
+                        <a href="about.html"
+                            class="text-gray-300 hover:text-hacker-green transition text-mono uppercase tracking-wider">Sobre</a>
+                        <a href="speakers.html"
+                            class="text-gray-300 hover:text-hacker-green transition text-mono uppercase tracking-wider">Palestrantes</a>
+                        <a href="schedule.html"
+                            class="text-gray-300 hover:text-hacker-green transition text-mono uppercase tracking-wider">Programação</a>
+                        <a href="sponsors.html"
+                            class="text-gray-300 hover:text-hacker-green transition text-mono uppercase tracking-wider">Patrocinadores</a>
+                        <a href="magazines.html"
+                            class="text-gray-300 hover:text-hacker-green transition text-mono uppercase tracking-wider">Revistas</a>
+                        <a href="tickets.html"
+                            class="bg-hacker-green text-terminal-black px-4 py-2 rounded-md font-bold hover:bg-opacity-80 transition text-mono">INGRESSOS</a>
                     </div>
                 </div>
-            </div>
-            <!-- Mobile Menu -->
-            <div
-                id="mobile-nav"
-                class="hidden md:hidden bg-terminal-black/95 p-4"
-            >
-                <div class="flex flex-col space-y-4">
-                    <a
-                        href="#about"
-                        class="text-gray-300 hover:text-hacker-green transition"
-                        >Sobre</a
-                    >
-                    <a
-                        href="#speakers"
-                        class="text-gray-300 hover:text-hacker-green transition"
-                        >Palestrantes</a
-                    >
-                    <a
-                        href="#schedule"
-                        class="text-gray-300 hover:text-hacker-green transition"
-                        >Programação</a
-                    >
-                    <a
-                        href="#sponsors"
-                        class="text-gray-300 hover:text-hacker-green transition"
-                        >Patrocinadores</a
-                    >
-                    <a
-                        href="#tickets"
-                        class="bg-hacker-green text-terminal-black px-4 py-2 rounded-md font-bold text-center"
-                        >Ingressos</a
-                    >
+                <div class="md:hidden">
+                    <button id="mobile-menu" onclick="toggleMenu()">
+                        <i data-feather="menu" class="text-hacker-green"></i>
+                    </button>
                 </div>
             </div>
-        </nav>
-        <section
-            id="about"
-            class="dotted-pattern-bg pb-20 bg-terminal-black/80 backdrop-blur-sm"
-        >
-            <div class="text-center mb-16">
-                <!-- <h2
+        </div>
+        <!-- Mobile Menu -->
+        <div id="mobile-nav" class="hidden md:hidden bg-terminal-black/95 p-4">
+            <div class="flex flex-col space-y-4">
+                <a href="about.html" class="text-gray-300 hover:text-hacker-green transition">Sobre</a>
+                <a href="speakers.html" class="text-gray-300 hover:text-hacker-green transition">Palestrantes</a>
+                <a href="schedule.html" class="text-gray-300 hover:text-hacker-green transition">Programação</a>
+                <a href="sponsors.html" class="text-gray-300 hover:text-hacker-green transition">Patrocinadores</a>
+                <a href="magazines.html" class="text-gray-300 hover:text-hacker-green transition">Revistas</a>
+                <a href="tickets.html"
+                    class="bg-hacker-green text-terminal-black px-4 py-2 rounded-md font-bold text-center">Ingressos</a>
+            </div>
+        </div>
+    </nav>
+
+    <section id="about" class="dotted-pattern-bg pb-20 bg-terminal-black/80 backdrop-blur-sm">
+        <div class="text-center mb-16">
+            <!-- <h2
                     class="text-3xl md:text-5xl font-bold font-['Share_Tech_Mono'] text-glow-red"
                 >
                     Sobre
                 </h2> -->
-                <!-- <div class="w-24 h-1 bg-hacker-green mx-auto mt-4"></div> -->
-            </div>
+            <!-- <div class="w-24 h-1 bg-hacker-green mx-auto mt-4"></div> -->
+        </div>
 
-            <div class="max-w-7xl mx-auto px-4 z-9 bg-b sm:px-6 lg:px-8">
-                <div class="overflow-hidden mx-auto">
-                    <img
-                        src="images/terror-h2hc-menor.PNG"
-                        alt="H2HC Conference"
-                        class="w-full h-auto"
-                    />
-                    <div class="text-center mb-16">
-                        <div
-                            class="absolute -top-[-21vh] z-20 -right-[-34vw] bg-hacker-green text-terminal-black p-1 rounded-lg shadow-lg sha"
-                        >
-                            <span class="font-bold text-2xl">22ª</span>
-                            <p class="text-sm">Edição</p>
-                        </div>
-                    </div>
-                    <div class="text-center mb-16">
-                        <div
-                            class="absolute -top-[-21.5vh] z-10 -right-[-33.8vw] bg-black text-terminal-black p-1 rounded-lg shadow-lg sha"
-                        >
-                            <span class="font-bold text-2xl text-black"
-                                >22ª</span
-                            >
-                            <p class="text-sm text-black">Edição</p>
-                        </div>
+        <div class="max-w-7xl mx-auto px-4 z-9 bg-b sm:px-6 lg:px-8">
+            <div class="overflow-hidden mx-auto">
+                <img src="images/terror-h2hc-menor.PNG" alt="H2HC Conference" class="w-full h-auto" />
+                <div class="text-center mb-16">
+                    <div
+                        class="absolute -top-[-21vh] z-20 -right-[-34vw] bg-hacker-green text-terminal-black p-1 rounded-lg shadow-lg sha">
+                        <span class="font-bold text-2xl">22ª</span>
+                        <p class="text-sm">Edição</p>
                     </div>
                 </div>
-                <div class="h-[0.4vh] w-[18vw] bg-hacker-green"></div>
+                <div class="text-center mb-16">
+                    <div
+                        class="absolute -top-[-21.5vh] z-10 -right-[-33.8vw] bg-black text-terminal-black p-1 rounded-lg shadow-lg sha">
+                        <span class="font-bold text-2xl text-black">22ª</span>
+                        <p class="text-sm text-black">Edição</p>
+                    </div>
+                </div>
+            </div>
+            <div class="h-[0.4vh] w-[18vw] bg-hacker-green"></div>
+            <div class="bg-hacker-green p-1">
+                <!-- rounded-lg -->
+                <div class="overflow-hidden mx-auto relative bg-black p-2">
+                    <div class="text-left ml-5 mt-7">
+                        <h2 class="text-2xl md:text-5xl font-bold font-['Share_Tech_Mono'] text-glow-red">
+                            Sobre a Conferência
+                        </h2>
+                    </div>
+                    <p class="text-gray-300 mb-12 mt-[1vh] text-xl p-3">
+                        A Hackers To Hackers Conference (H2HC) é a
+                        conferência de segurança mais antiga da América
+                        Latina, criada inicialmente para reunir amigos da
+                        internet e hoje organizada por especialistas da
+                        área, com o objetivo de disseminar e discutir
+                        conhecimentos em segurança da informação por meio de
+                        palestras, treinamentos, villages e workshops. O
+                        evento foca em apresentar novas técnicas e
+                        ferramentas, muitas vezes inéditas, para que
+                        profissionais de segurança compreendam como
+                        atacantes agem e possam se defender melhor.
+                        Defende-se que, além de aplicar correções fornecidas
+                        por fabricantes, a melhor proteção contra falhas
+                        conhecidas e desconhecidas é entender profundamente
+                        como os problemas ocorrem, permitindo criar
+                        mecanismos mais eficazes de segurança.
+                    </p>
+                </div>
+            </div>
+            <div class="h-[0.4vh] w-[18vw] bg-hacker-green ml-auto"></div>
+
+            <container>
+                <div class="h-[0.4vh] w-[18vw] bg-hacker-green mt-20"></div>
                 <div class="bg-hacker-green p-1">
                     <!-- rounded-lg -->
                     <div class="overflow-hidden mx-auto relative bg-black p-2">
                         <div class="text-left ml-5 mt-7">
-                            <h2
-                                class="text-2xl md:text-5xl font-bold font-['Share_Tech_Mono'] text-glow-red"
-                            >
-                                Sobre a Conferência
+                            <h2 class="text-2xl md:text-5xl font-bold font-['Share_Tech_Mono'] text-glow-red">
+                                Público-alvo
                             </h2>
                         </div>
                         <p class="text-gray-300 mb-12 mt-[1vh] text-xl p-3">
-                            A Hackers To Hackers Conference (H2HC) é a
-                            conferência de segurança mais antiga da América
-                            Latina, criada inicialmente para reunir amigos da
-                            internet e hoje organizada por especialistas da
-                            área, com o objetivo de disseminar e discutir
-                            conhecimentos em segurança da informação por meio de
-                            palestras, treinamentos, villages e workshops. O
-                            evento foca em apresentar novas técnicas e
-                            ferramentas, muitas vezes inéditas, para que
-                            profissionais de segurança compreendam como
-                            atacantes agem e possam se defender melhor.
-                            Defende-se que, além de aplicar correções fornecidas
-                            por fabricantes, a melhor proteção contra falhas
-                            conhecidas e desconhecidas é entender profundamente
-                            como os problemas ocorrem, permitindo criar
-                            mecanismos mais eficazes de segurança.
+                            Qualquer pessoa responsável pela segurança da
+                            informação e privacidade deve participar,
+                            incluindo: CEO, CIO, CTO, diretores de
+                            tecnologia, arquitetos de sistema,
+                            desenvolvedores de sistema, administradores de
+                            rede, oficiais de segurança, especialistas em
+                            segurança de rede, consultores de segurança,
+                            gerentes de risco, administradores de sistema e
+                            estudantes que têm aprendizado contínuo sobre
+                            segurança.
                         </p>
                     </div>
                 </div>
                 <div class="h-[0.4vh] w-[18vw] bg-hacker-green ml-auto"></div>
+            </container>
 
-                <container>
-                    <div class="h-[0.4vh] w-[18vw] bg-hacker-green mt-20"></div>
-                    <div class="bg-hacker-green p-1">
-                        <!-- rounded-lg -->
-                        <div
-                            class="overflow-hidden mx-auto relative bg-black p-2"
-                        >
-                            <div class="text-left ml-5 mt-7">
-                                <h2
-                                    class="text-2xl md:text-5xl font-bold font-['Share_Tech_Mono'] text-glow-red"
-                                >
-                                    Público-alvo
-                                </h2>
-                            </div>
-                            <p class="text-gray-300 mb-12 mt-[1vh] text-xl p-3">
-                                Qualquer pessoa responsável pela segurança da
-                                informação e privacidade deve participar,
-                                incluindo: CEO, CIO, CTO, diretores de
-                                tecnologia, arquitetos de sistema,
-                                desenvolvedores de sistema, administradores de
-                                rede, oficiais de segurança, especialistas em
-                                segurança de rede, consultores de segurança,
-                                gerentes de risco, administradores de sistema e
-                                estudantes que têm aprendizado contínuo sobre
-                                segurança.
-                            </p>
+            <container>
+                <div class="h-[0.4vh] w-[18vw] bg-hacker-green mt-20"></div>
+                <div class="bg-hacker-green p-1">
+                    <!-- rounded-lg -->
+                    <div class="overflow-hidden mx-auto relative bg-black p-2">
+                        <div class="text-left ml-5 mt-7">
+                            <h2 class="text-2xl md:text-5xl font-bold font-['Share_Tech_Mono'] text-glow-red">
+                                Temas e Assuntos
+                            </h2>
                         </div>
-                    </div>
-                    <div
-                        class="h-[0.4vh] w-[18vw] bg-hacker-green ml-auto"
-                    ></div>
-                </container>
-
-                <container>
-                    <div class="h-[0.4vh] w-[18vw] bg-hacker-green mt-20"></div>
-                    <div class="bg-hacker-green p-1">
-                        <!-- rounded-lg -->
-                        <div
-                            class="overflow-hidden mx-auto relative bg-black p-2"
-                        >
-                            <div class="text-left ml-5 mt-7">
-                                <h2
-                                    class="text-2xl md:text-5xl font-bold font-['Share_Tech_Mono'] text-glow-red"
-                                >
-                                    Temas e Assuntos
-                                </h2>
-                            </div>
-                            <p class="text-gray-300 mt-[1vh] text-xl p-3">
-                                Os tópicos incluem, mas não se limitam a:
-                            </p>
-                            <ul
-                                class="ml-10 list-disc list-inside marker:text-red-500 space-y-2 text-gray-300 text-lg mb-5"
-                            >
-                                <li>Teste de Intrusão</li>
-                                <li>Segurança de aplicativos web</li>
-                                <li>
-                                    Segurança de telecomunicações e phone
-                                    phreaking
-                                </li>
-                                <li>
-                                    Fuzzing e testes de segurança de aplicativos
-                                </li>
-                                <li>
-                                    Técnicas para desenvolvimento de software e
-                                    sistemas seguros
-                                </li>
-                                <li>
-                                    Hacking de hardware, sistemas embarcados e
-                                    outros dispositivos eletrônicos
-                                </li>
-                                <li>
-                                    Exploração de dispositivos móveis,
-                                    tecnologia Symbian, P2K e Bluetooth
-                                </li>
-                                <li>Análise de vírus, worms e malwares</li>
-                                <li>Engenharia reversa</li>
-                                <li>Rootkits</li>
-                                <li>Segurança Wi-Fi e VoIP</li>
-                                <li>
-                                    Smartcards, RFID e informações de segurança
-                                    similares
-                                </li>
-                                <li>
-                                    Abordagem técnica para sistemas operacionais
-                                    alternativos
-                                </li>
-                                <li>
-                                    Ataques de negação de serviço e/ou
-                                    contramedidas
-                                </li>
-                                <li>
-                                    Aspectos de segurança em SCADA, ambientes
-                                    industriais e redes "obscure"
-                                </li>
-                                <li>Criptografia</li>
-                                <li>
-                                    Lockpicking, trashing, segurança física e
-                                    exploração urbana
-                                </li>
-                                <li>Internet, privacidade e Big Brother</li>
-                                <li>
-                                    Guerra de informações e espionagem
-                                    industrial
-                                </li>
-                            </ul>
-                        </div>
-                    </div>
-                    <div
-                        class="h-[0.4vh] w-[18vw] bg-hacker-green ml-auto"
-                    ></div>
-                </container>
-
-                <container>
-                    <div class="h-[0.4vh] w-[18vw] bg-hacker-green mt-20"></div>
-                    <div class="bg-hacker-green p-1">
-                        <!-- rounded-lg -->
-                        <div
-                            class="overflow-hidden mx-auto relative bg-black p-2"
-                        >
-                            <div class="text-left ml-5 mt-7">
-                                <h2
-                                    class="text-2xl md:text-5xl font-bold font-['Share_Tech_Mono'] text-glow-red"
-                                >
-                                    Organização
-                                </h2>
-                            </div>
-                            <ul
-                                class="grid grid-cols-2 gap-y-2 gap-x-8 text-gray-300 text-xl p-3 list-disc list-inside marker:text-warning-red ml-[12vw] mt-[3vh] mb-[3vh]"
-                            >
-                                <li>Rodrigo Rubira Branco</li>
-                                <li>Felipe Alcarde Balestra</li>
-                            </ul>
-                        </div>
-                    </div>
-                    <div
-                        class="h-[0.4vh] w-[18vw] bg-hacker-green ml-auto"
-                    ></div>
-                </container>
-
-                <container>
-                    <div class="h-[0.4vh] w-[18vw] bg-hacker-green mt-20"></div>
-                    <div class="bg-hacker-green p-1">
-                        <!-- rounded-lg -->
-                        <div
-                            class="overflow-hidden mx-auto relative bg-black p-2"
-                        >
-                            <div class="text-left ml-5 mt-7">
-                                <h2
-                                    class="text-2xl md:text-5xl font-bold font-['Share_Tech_Mono'] text-glow-red"
-                                >
-                                    Colaboradores
-                                </h2>
-                            </div>
-                            <ul
-                                class="grid grid-cols-3 gap-y-2 gap-x-8 text-gray-300 text-xl p-3 list-disc list-inside marker:text-warning-red ml-[7vw] mt-[3vh] mb-[3vh]"
-                            >
-                                <li>Alan Castro</li>
-                                <li>Endrigo Antonini</li>
-                                <li>Fernando Damiao</li>
-                            </ul>
-                        </div>
-                    </div>
-                    <div
-                        class="h-[0.4vh] w-[18vw] bg-hacker-green ml-auto"
-                    ></div>
-                </container>
-
-                <container>
-                    <div class="h-[0.4vh] w-[18vw] bg-hacker-green mt-20"></div>
-                    <div class="bg-hacker-green p-1">
-                        <!-- rounded-lg -->
-                        <div
-                            class="overflow-hidden mx-auto relative bg-black p-2"
-                        >
-                            <div class="text-left ml-5 mt-7">
-                                <h2
-                                    class="text-2xl md:text-5xl font-bold font-['Share_Tech_Mono'] text-glow-red"
-                                >
-                                    Voluntariado
-                                </h2>
-                            </div>
-                            <ul
-                                class="grid grid-cols-2 gap-y-2 gap-x-8 text-gray-300 text-xl p-3 list-disc list-inside marker:text-warning-red ml-[12vw] mt-[3vh] mb-[3vh]"
-                            >
-                                <li>Alan Castro</li>
-                                <li>Endrigo Antonini</li>
-                                <li>Fernando Damiao</li>
-                                <li>Henrique Galdino</li>
-                                <li>Leandro Rocha</li>
-                                <li>Natalia Carosio</li>
-                                <li>Ygor Sousa</li>
-                            </ul>
-                        </div>
-                    </div>
-                    <div
-                        class="h-[0.4vh] w-[18vw] bg-hacker-green ml-auto"
-                    ></div>
-                </container>
-            </div>
-        </section>
-        <!-- Footer -->
-        <footer class="bg-terminal-black py-12">
-            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-                    <div>
-                        <h4 class="text-lg font-bold mb-4">Localização</h4>
-                        <ul class="space-y-2">
-                            <li class="flex items-center">
-                                <i
-                                    data-feather="map-pin"
-                                    class="mr-2 text-gray-400"
-                                ></i>
-                                <a
-                                    href="https://maps.google.com/?q=Av.+Zaki+Narchi,+500+Vila+Guilherme+Sao+Paulo,+SP+02029-000"
-                                    target="_blank"
-                                    class="text-gray-400 hover:text-hacker-green transition"
-                                >
-                                    Novotel Center Norte
-                                </a>
-                            </li>
-                            <li class="flex items-center">
-                                <i
-                                    data-feather="calendar"
-                                    class="mr-2 text-gray-400"
-                                ></i>
-                                <span class="text-gray-400"
-                                    >13-14 Dezembro 2025</span
-                                >
-                            </li>
-                            <li class="flex items-center">
-                                <i
-                                    data-feather="clock"
-                                    class="mr-2 text-gray-400"
-                                ></i>
-                                <span class="text-gray-400"
-                                    >São Paulo,
-                                    <span class="text-hacker-green"
-                                        >Brasil</span
-                                    ></span
-                                >
-                            </li>
-                        </ul>
-                    </div>
-                    <div>
-                        <h4 class="text-lg font-bold mb-4">Contato</h4>
-                        <ul class="space-y-2">
-                            <li class="flex items-center">
-                                <i
-                                    data-feather="mail"
-                                    class="mr-2 text-gray-400"
-                                ></i>
-                                <span class="text-gray-400"
-                                    >contact@h2hc.tech</span
-                                >
-                            </li>
-                            <li class="flex items-center">
-                                <i
-                                    data-feather="instagram"
-                                    class="mr-2 text-gray-400"
-                                ></i>
-                                <span class="text-gray-400"
-                                    >@h2hconference</span
-                                >
-                            </li>
-                        </ul>
-                    </div>
-                    <div>
-                        <h4 class="text-lg font-bold mb-4">Call for Papers</h4>
-                        <p class="text-gray-400 mb-4">
-                            Submeta sua proposta de palestra
+                        <p class="text-gray-300 mt-[1vh] text-xl p-3">
+                            Os tópicos incluem, mas não se limitam a:
                         </p>
-                        <a
-                            href=""
-                            class="bg-hacker-green text-terminal-black px-4 py-2 rounded-md font-bold hover:bg-opacity-90 transition"
-                        >
-                            Submeter
-                        </a>
+                        <ul
+                            class="ml-10 list-disc list-inside marker:text-red-500 space-y-2 text-gray-300 text-lg mb-5">
+                            <li>Teste de Intrusão</li>
+                            <li>Segurança de aplicativos web</li>
+                            <li>Segurança de telecomunicações e phone phreaking</li>
+                            <li>Fuzzing e testes de segurança de aplicativos</li>
+                            <li>Técnicas para desenvolvimento de software e sistemas seguros</li>
+                            <li>Hacking de hardware, sistemas embarcados e outros dispositivos eletrônicos</li>
+                            <li>Exploração de dispositivos móveis, tecnologia Symbian, P2K e Bluetooth</li>
+                            <li>Análise de vírus, worms e malwares</li>
+                            <li>Engenharia reversa</li>
+                            <li>Rootkits</li>
+                            <li>Segurança Wi-Fi e VoIP</li>
+                            <li>Smartcards, RFID e informações de segurança similares</li>
+                            <li>Abordagem técnica para sistemas operacionais alternativos</li>
+                            <li>Ataques de negação de serviço e/ou contramedidas</li>
+                            <li>Aspectos de segurança em SCADA, ambientes industriais e redes "obscure"</li>
+                            <li>Criptografia</li>
+                            <li>Lockpicking, trashing, segurança física e exploração urbana</li>
+                            <li>Internet, privacidade e Big Brother</li>
+                            <li>Guerra de informações e espionagem industrial</li>
+                        </ul>
                     </div>
                 </div>
-                <div
-                    class="border-t border-gray-800 mt-12 pt-8 text-center text-gray-500"
-                >
-                    <p>
-                        © 2025 H2HC - Hackers to Hackers Conference. All rights
-                        reserved.
-                    </p>
+                <div class="h-[0.4vh] w-[18vw] bg-hacker-green ml-auto"></div>
+            </container>
+
+            <container>
+                <div class="h-[0.4vh] w-[18vw] bg-hacker-green mt-20"></div>
+                <div class="bg-hacker-green p-1">
+                    <div class="overflow-hidden mx-auto relative bg-black p-2">
+                        <div class="text-left ml-5 mt-7">
+                            <h2 class="text-2xl md:text-5xl font-bold font-['Share_Tech_Mono'] text-glow-red">
+                                Organização
+                            </h2>
+                        </div>
+                        <ul
+                            class="ml-10 list-disc list-inside marker:text-red-500 space-y-2 text-gray-300 text-lg mb-5 mt-[3vh] p-3">
+                            <li>Felipe Alcarde Balestra</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="h-[0.4vh] w-[18vw] bg-hacker-green ml-auto"></div>
+            </container>
+
+            <container>
+                <div class="h-[0.4vh] w-[18vw] bg-hacker-green mt-20"></div>
+                <div class="bg-hacker-green p-1">
+                    <div class="overflow-hidden mx-auto relative bg-black p-2">
+                        <div class="text-left ml-5 mt-7">
+                            <h2 class="text-2xl md:text-5xl font-bold font-['Share_Tech_Mono'] text-glow-red">
+                                Colaboradores
+                            </h2>
+                        </div>
+                        <ul
+                            class="ml-10 list-disc list-inside marker:text-red-500 space-y-2 text-gray-300 text-lg mb-5 mt-[3vh] p-3">
+                            <li>Cleber Brandao (clebeer) - Líder da equipe</li>
+                            <li>Gabriel Negreira Barbosa - Editor da revista H2HC</li>
+                            <li>Ricardo L0gan - Staff CTF</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="h-[0.4vh] w-[18vw] bg-hacker-green ml-auto"></div>
+            </container>
+
+            <container>
+                <div class="h-[0.4vh] w-[18vw] bg-hacker-green mt-20"></div>
+                <div class="bg-hacker-green p-1">
+                    <div class="overflow-hidden mx-auto relative bg-black p-2">
+                        <div class="text-left ml-5 mt-7">
+                            <h2 class="text-2xl md:text-5xl font-bold font-['Share_Tech_Mono'] text-glow-red">
+                                Voluntariado
+                            </h2>
+                        </div>
+                        <ul
+                            class="ml-10 list-disc list-inside marker:text-red-500 space-y-2 text-gray-300 text-lg mb-5 mt-[3vh] p-3">
+                            <li>Alan Castro</li>
+                            <li>Endrigo Antonini</li>
+                            <li>Fernando Damiao</li>
+                            <li>Henrique Galdino</li>
+                            <li>Leandro Rocha</li>
+                            <li>Natalia Carosio</li>
+                            <li>Ygor Sousa</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="h-[0.4vh] w-[18vw] bg-hacker-green ml-auto"></div>
+            </container>
+
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-terminal-black py-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+                <div>
+                    <h4 class="text-lg font-bold mb-4">Localização</h4>
+                    <ul class="space-y-2">
+                        <li class="flex items-center">
+                            <i data-feather="map-pin" class="mr-2 text-gray-400"></i>
+                            <a href="https://maps.google.com/?q=Av.+Zaki+Narchi,+500+Vila+Guilherme+Sao+Paulo,+SP+02029-000"
+                                target="_blank" class="text-gray-400 hover:text-hacker-green transition">
+                                Novotel Center Norte
+                            </a>
+                        </li>
+                        <li class="flex items-center">
+                            <i data-feather="calendar" class="mr-2 text-gray-400"></i>
+                            <span class="text-gray-400">13-14 Dezembro 2025</span>
+                        </li>
+                        <li class="flex items-center">
+                            <i data-feather="clock" class="mr-2 text-gray-400"></i>
+                            <span class="text-gray-400">São Paulo, <span class="text-hacker-green">Brasil</span></span>
+                        </li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-lg font-bold mb-4">Contato</h4>
+                    <ul class="space-y-2">
+                        <li class="flex items-center">
+                            <i data-feather="mail" class="mr-2 text-gray-400"></i>
+                            <span class="text-gray-400">contact@h2hc.tech</span>
+                        </li>
+                        <li class="flex items-center">
+                            <i data-feather="instagram" class="mr-2 text-gray-400"></i>
+                            <span class="text-gray-400">@h2hconference</span>
+                        </li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-lg font-bold mb-4">Call for Papers</h4>
+                    <p class="text-gray-400 mb-4">Submeta sua proposta de palestra</p>
+                    <a href=""
+                        class="bg-hacker-green text-terminal-black px-4 py-2 rounded-md font-bold hover:bg-opacity-90 transition">
+                        Submeter
+                    </a>
+                </div>
+                <div>
+                    <h4 class="text-lg font-bold mb-4">Social</h4>
+                    <ul class="space-y-2">
+                        <li class="flex items-center">
+                            <i data-feather="twitter" class="mr-2 text-gray-400"></i>
+                            <a href="https://twitter.com/h2hconference" target="_blank"
+                                class="text-gray-400 hover:text-hacker-green transition">
+                                Twitter
+                            </a>
+                        </li>
+                        <li class="flex items-center">
+                            <i data-feather="facebook" class="mr-2 text-gray-400"></i>
+                            <a href="https://www.facebook.com/h2hconference" target="_blank"
+                                class="text-gray-400 hover:text-hacker-green transition">
+                                Facebook
+                            </a>
+                        </li>
+                        <li class="flex items-center">
+                            <i data-feather="instagram" class="mr-2 text-gray-400"></i>
+                            <a href="https://www.instagram.com/h2hconference/" target="_blank"
+                                class="text-gray-400 hover:text-hacker-green transition">
+                                Instagram
+                            </a>
+                        </li>
+                        <li class="flex items-center">
+                            <i data-feather="send" class="mr-2 text-gray-400"></i>
+                            <a href="https://t.me/h2hconference" target="_blank"
+                                class="text-gray-400 hover:text-hacker-green transition">
+                                Telegram
+                            </a>
+                        </li>
+                        <li class="flex items-center">
+                            <i data-feather="youtube" class="mr-2 text-gray-400"></i>
+                            <a href="https://www.youtube.com/h2hconference" target="_blank"
+                                class="text-gray-400 hover:text-hacker-green transition">
+                                YouTube
+                            </a>
+                        </li>
+                    </ul>
                 </div>
             </div>
-        </footer>
-    </body>
-    <script src="./index.js"></script>
+            <div class="border-t border-gray-800 mt-12 pt-8 text-center text-gray-500">
+                <p>© 2025 H2HC - Hackers to Hackers Conference. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+</body>
+
+<script src="./index.js"></script>
+
 </html>
