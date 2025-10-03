@@ -35,18 +35,13 @@
                 </div>
                 <div class="hidden md:block">
                     <div class="ml-10 flex items-center space-x-8">
-                        <a href="about.html"
-                            class="text-gray-300 hover:text-hacker-green transition text-mono uppercase tracking-wider">Sobre</a>
-                        <a href="speakers.html"
-                            class="text-gray-300 hover:text-hacker-green transition text-mono uppercase tracking-wider">Palestrantes</a>
-                        <a href="schedule.html"
-                            class="text-gray-300 hover:text-hacker-green transition text-mono uppercase tracking-wider">Programação</a>
-                        <a href="sponsors.html"
-                            class="text-gray-300 hover:text-hacker-green transition text-mono uppercase tracking-wider">Patrocinadores</a>
-                        <a href="magazines.html"
-                            class="text-gray-300 hover:text-hacker-green transition text-mono uppercase tracking-wider">Revistas</a>                        
-                        <a href="tickets.html"
-                            class="bg-hacker-green text-terminal-black px-4 py-2 rounded-md font-bold hover:bg-opacity-80 transition text-mono">INGRESSOS</a>
+                        <a href="index.html" class="text-gray-300 hover:text-hacker-green transition text-mono uppercase tracking-wider">Início</a>
+                        <a href="about.html" class="text-gray-300 hover:text-hacker-green transition text-mono uppercase tracking-wider">Sobre</a>
+                        <a href="speakers.html" class="text-gray-300 hover:text-hacker-green transition text-mono uppercase tracking-wider">Palestrantes</a>
+                        <a href="schedule.html" class="text-gray-300 hover:text-hacker-green transition text-mono uppercase tracking-wider">Programação</a>
+                        <a href="sponsors.html" class="text-gray-300 hover:text-hacker-green transition text-mono uppercase tracking-wider">Patrocinadores</a>
+                        <a href="magazines.html" class="text-gray-300 hover:text-hacker-green transition text-mono uppercase tracking-wider">Revistas</a>
+                        <a href="tickets.html" class="bg-hacker-green text-terminal-black px-4 py-2 rounded-md font-bold hover:bg-opacity-80 transition text-mono">INGRESSOS</a>
                     </div>
                 </div>
                 <div class="md:hidden">
@@ -56,16 +51,17 @@
                 </div>
             </div>
         </div>
+
         <!-- Mobile Menu -->
         <div id="mobile-nav" class="hidden md:hidden bg-terminal-black/95 p-4">
             <div class="flex flex-col space-y-4">
+                <a href="index.html" class="text-gray-300 hover:text-hacker-green transition">Início</a>
                 <a href="about.html" class="text-gray-300 hover:text-hacker-green transition">Sobre</a>
                 <a href="speakers.html" class="text-gray-300 hover:text-hacker-green transition">Palestrantes</a>
                 <a href="schedule.html" class="text-gray-300 hover:text-hacker-green transition">Programação</a>
                 <a href="sponsors.html" class="text-gray-300 hover:text-hacker-green transition">Patrocinadores</a>
                 <a href="magazines.html" class="text-gray-300 hover:text-hacker-green transition">Revistas</a>
-                <a href="tickets.html"
-                    class="bg-hacker-green text-terminal-black px-4 py-2 rounded-md font-bold text-center">Ingressos</a>
+                <a href="tickets.html" class="bg-hacker-green text-terminal-black px-4 py-2 rounded-md font-bold text-center">Ingressos</a>
             </div>
         </div>
     </nav>
@@ -82,8 +78,10 @@
                 <div class="typewriter max-w-3xl mx-auto text-xl md:text-2xl mb-8">
                     A maior conferência HACKER da América Latina
                 </div>
-                <div class="flex flex-col sm:flex-row justify-center gap-4">
-                    <a href="https://www.eventbrite.com.br/e/h2hc-hackers-2-hackers-conference-2024-21-anos-registration-928788179447"
+
+                <!-- Botões de ação -->
+                <div class="flex flex-col sm:flex-row justify-center gap-4 mb-12">
+                    <a href="https://www.eventbrite.com.br/e/h2hc-hackers-2-hackers-conference-2024-21-anos-registration-9.28788179447e+11"
                         target="_blank"
                         class="bg-hacker-green text-terminal-black px-6 py-3 rounded-md font-bold text-lg hover:bg-opacity-90 transition transform hover:scale-105 text-mono">
                         COMPRE AGORA
@@ -93,24 +91,53 @@
                         VER PROGRAMAÇÃO
                     </button>
                 </div>
-            </div>
-            <div class="mt-32 grid grid-cols-1 md:grid-cols-3 gap-8 text-center">
-                <div class="bg-terminal-black/70 p-6 rounded-lg animated-border">
-                    <i data-feather="calendar" class="w-12 h-12 mx-auto text-hacker-green"></i>
-                    <h3 class="text-xl font-bold mt-4">13-14 Dezembro</h3>
-                    <p class="mt-2 text-gray-400">2 dias de evento</p>
+
+                <!-- Countdown Timer -->
+                <div class="mb-16">
+                    <div class="grid grid-cols-2 md:grid-cols-4 gap-4 max-w-4xl mx-auto">
+                        <div class="bg-terminal-black/70 rounded-lg p-4 border border-hacker-green">
+                            <div id="days" class="countdown-item text-4xl md:text-5xl font-bold text-hacker-green">00
+                            </div>
+                            <div class="text-gray-300 text-lg">Dias</div>
+                        </div>
+                        <div class="bg-terminal-black/70 rounded-lg p-4 border border-hacker-green">
+                            <div id="hours" class="countdown-item text-4xl md:text-5xl font-bold text-hacker-green">00
+                            </div>
+                            <div class="text-gray-300 text-lg">Horas</div>
+                        </div>
+                        <div class="bg-terminal-black/70 rounded-lg p-4 border border-hacker-green">
+                            <div id="minutes" class="countdown-item text-4xl md:text-5xl font-bold text-hacker-green">00
+                            </div>
+                            <div class="text-gray-300 text-lg">Minutos</div>
+                        </div>
+                        <div class="bg-terminal-black/70 rounded-lg p-4 border border-hacker-green">
+                            <div id="seconds" class="countdown-item text-4xl md:text-5xl font-bold text-hacker-green">00
+                            </div>
+                            <div class="text-gray-300 text-lg">Segundos</div>
+                        </div>
+                    </div>
                 </div>
-                <div class="bg-terminal-black/70 p-6 rounded-lg animated-border">
-                    <i data-feather="map-pin" class="w-12 h-12 mx-auto text-matrix-blue"></i>
-                    <a href="https://maps.google.com/?q=Av.+Zaki+Narchi,+500+Vila+Guilherme+Sao+Paulo,+SP+02029-000">
-                        <h3 class="text-xl font-bold mt-4">São Paulo, <span class="text-red-500">Brasil</span></h3>
-                        <p class="mt-2 text-gray-400">Novotel Center Norte</p>
-                    </a>
-                </div>
-                <div class="bg-terminal-black/70 p-6 rounded-lg animated-border">
-                    <i data-feather="users" class="w-12 h-12 mx-auto text-warning-red"></i>
-                    <h3 class="text-xl font-bold mt-4">Mais de 2.000 Participantes</h3>
-                    <p class="mt-2 text-gray-400">Hackers</p>
+
+                <!-- Cards informativos -->
+                <div class="mt-16 grid grid-cols-1 md:grid-cols-3 gap-8 text-center">
+                    <div class="bg-terminal-black/70 p-6 rounded-lg animated-border">
+                        <i data-feather="calendar" class="w-12 h-12 mx-auto text-hacker-green"></i>
+                        <h3 class="text-xl font-bold mt-4">13-14 Dezembro</h3>
+                        <p class="mt-2 text-gray-400">2 dias de evento</p>
+                    </div>
+                    <div class="bg-terminal-black/70 p-6 rounded-lg animated-border">
+                        <i data-feather="map-pin" class="w-12 h-12 mx-auto text-matrix-blue"></i>
+                        <a
+                            href="https://maps.google.com/?q=Av.+Zaki+Narchi,+500+Vila+Guilherme+Sao+Paulo,+SP+02029-000">
+                            <h3 class="text-xl font-bold mt-4">São Paulo, <span class="text-red-500">Brasil</span></h3>
+                            <p class="mt-2 text-gray-400">Novotel Center Norte</p>
+                        </a>
+                    </div>
+                    <div class="bg-terminal-black/70 p-6 rounded-lg animated-border">
+                        <i data-feather="users" class="w-12 h-12 mx-auto text-warning-red"></i>
+                        <h3 class="text-xl font-bold mt-4">Mais de 2.000</h3>
+                        <p class="mt-2 text-gray-400">Participantes</p>
+                    </div>
                 </div>
             </div>
         </div>
@@ -250,11 +277,11 @@
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center mb-16">
                 <h2 class="text-3xl md:text-5xl font-bold font-['Share_Tech_Mono'] text-glow-red">
-                    Agenda do
-                    evento</h2>
+                    Agenda do Evento
+                </h2>
                 <div class="w-24 h-1 bg-warning-red mx-auto mt-4"></div>
                 <p class="max-w-2xl mx-auto mt-6 text-gray-400">
-                    Dois dias de palestras técnicas, workshops e networking
+                    Dois dias de palestras técnicas em dois palcos simultâneos
                 </p>
             </div>
 
@@ -273,335 +300,303 @@
             </div>
 
             <!-- Day 1 Schedule -->
-            <div id="day1-schedule" class="space-y-4 max-w-6xl mx-auto">
-                <!-- 09:00 -->
-                <div class="bg-terminal-black/70 p-6 rounded-lg static-top-border">
-                    <div class="flex flex-col md:flex-row md:items-center">
-                        <div class="md:w-1/4 mb-4 md:mb-0">
-                            <div class="text-hacker-green font-bold text-lg">09:00 - 09:30</div>
-                            <div class="text-sm text-gray-400">Auditório Principal</div>
-                        </div>
-                        <div class="md:w-3/4">
-                            <h3 class="text-xl font-bold text-matrix-blue">Credenciamento e Welcome Coffee</h3>
-                            <p class="text-gray-400 mt-1">Recepção dos participantes e networking inicial</p>
-                        </div>
-                    </div>
-                </div>
+            <div id="day1-schedule">
+                <!-- Schedule Grid -->
+                <div class="grid md:grid-cols-2 gap-6 items-start">
+                    <!-- H2HC Main Stage -->
+                    <div
+                        class="bg-terminal-black/90 backdrop-blur-md rounded-lg shadow-lg border-2 border-hacker-green p-4 md:p-6">
+                        <h2 class="text-2xl font-bold mb-6 text-center text-matrix-blue">H2HC</h2>
+                        <div class="space-y-4">
+                            <!-- 08:20 -->
+                            <div class="schedule-item border-b border-gray-600 pb-4" data-time="08:20">
+                                <p class="text-lg font-semibold text-matrix-blue">08:20</p>
+                                <p class="text-white font-medium">Credenciamento</p>
+                            </div>
 
-                <!-- 09:30 -->
-                <div class="bg-terminal-black/70 p-6 rounded-lg static-top-border">
-                    <div class="flex flex-col md:flex-row md:items-center">
-                        <div class="md:w-1/4 mb-4 md:mb-0">
-                            <div class="text-hacker-green font-bold text-lg">09:30 - 10:30</div>
-                            <div class="text-sm text-gray-400">Auditório Principal</div>
-                        </div>
-                        <div class="md:w-3/4">
-                            <h3 class="text-xl font-bold text-matrix-blue">Keynote de Abertura</h3>
-                            <p class="text-gray-400 mt-1">O Estado da Segurança Cibernética na América Latina</p>
-                            <div class="flex items-center mt-3">
-                                <div
-                                    class="w-8 h-8 rounded-full bg-hacker-green/20 mr-3 flex items-center justify-center">
-                                    <i data-feather="user" class="w-4 h-4 text-hacker-green"></i>
-                                </div>
-                                <span class="text-sm">Dr. Ricardo Santos - CISO, TechCorp</span>
+                            <!-- 09:00 -->
+                            <div class="schedule-item border-b border-gray-600 pb-4" data-time="09:00">
+                                <p class="text-lg font-semibold text-matrix-blue">09:00</p>
+                                <p class="text-white font-medium">Abertura</p>
+                            </div>
+
+                            <!-- 09:30 -->
+                            <div class="schedule-item border-b border-gray-600 pb-4" data-time="09:30">
+                                <p class="text-lg font-semibold text-matrix-blue">09:30</p>
+                                <p class="font-medium text-white">Keynote: 30+ years of exploiting things</p>
+                                <p class="text-sm text-gray-400 mt-1">xxxxxxxx - Principal Security
+                                    Researcher, CyberDefense Labs</p>
+                            </div>
+
+                            <!-- 10:30 -->
+                            <div class="schedule-item border-b border-gray-600 pb-4" data-time="10:30">
+                                <p class="text-lg font-semibold text-matrix-blue">10:30</p>
+                                <p class="font-medium text-white">Grey Matter and Zero-Days: Outwitting Cognitive
+                                    Decline in VR</p>
+                                <p class="text-sm text-gray-400 mt-1">xxxxxxxx - VR Security Researcher, MIT
+                                    Media Lab</p>
+                            </div>
+
+                            <!-- 11:30 -->
+                            <div class="schedule-item border-b border-gray-600 pb-4" data-time="11:30">
+                                <p class="text-lg font-semibold text-matrix-blue">11:30</p>
+                                <p class="font-medium text-white">The Kernel Hacker's Guide to the Galaxy: Automated
+                                    Exploit Engineering</p>
+                                <p class="text-sm text-gray-400 mt-1">xxxxxxxx - Kernel Security Engineer,
+                                    Google Project Zero</p>
+                            </div>
+
+                            <!-- 12:30 -->
+                            <div class="schedule-item border-b border-gray-600 pb-4" data-time="12:30">
+                                <p class="text-lg font-semibold text-matrix-blue">12:30</p>
+                                <p class="text-white font-medium">Intervalo para Almoço</p>
+                            </div>
+
+                            <!-- 14:00 -->
+                            <div class="schedule-item border-b border-gray-600 pb-4" data-time="14:00">
+                                <p class="text-lg font-semibold text-matrix-blue">14:00</p>
+                                <p class="font-medium text-white">Modern Framework for Kernel Exploitation and Research
+                                </p>
+                                <p class="text-sm text-gray-400 mt-1">xxxxxxxx - Principal Engineer, Microsoft
+                                    Security Response Center</p>
+                            </div>
+
+                            <!-- 15:00 -->
+                            <div class="schedule-item border-b border-gray-600 pb-4" data-time="15:00">
+                                <p class="text-lg font-semibold text-matrix-blue">15:00</p>
+                                <p class="font-medium text-white">Peeeeoow Klonk! - Having fun with Crane Remotes</p>
+                                <p class="text-sm text-gray-400 mt-1">xxxxxxxx - RF Security Researcher,
+                                    IOActive</p>
+                            </div>
+
+                            <!-- 16:00 -->
+                            <div class="schedule-item border-b border-gray-600 pb-4" data-time="16:00">
+                                <p class="text-lg font-semibold text-matrix-blue">16:00</p>
+                                <p class="text-white font-medium">Intervalo</p>
+                            </div>
+
+                            <!-- 16:30 -->
+                            <div class="schedule-item border-b border-gray-600 pb-4" data-time="16:30">
+                                <p class="text-lg font-semibold text-matrix-blue">16:30</p>
+                                <p class="font-medium text-white">Diving into Linux kernel security</p>
+                                <p class="text-sm text-gray-400 mt-1">xxxxxxxx - Linux Kernel Developer, Red Hat
+                                    Security Team</p>
+                            </div>
+
+                            <!-- 17:30 -->
+                            <div class="schedule-item border-b border-gray-600 pb-4" data-time="17:30">
+                                <p class="text-lg font-semibold text-matrix-blue">17:30</p>
+                                <p class="font-medium text-white">Exploiting Alternate Spectre Vulnerabilities with
+                                    Alternate Predictions</p>
+                                <p class="text-sm text-gray-400 mt-1">xxxxxxxx - CPU Security Researcher,
+                                    Intel Labs</p>
                             </div>
                         </div>
                     </div>
-                </div>
 
-                <!-- 10:30 -->
-                <div class="bg-terminal-black/70 p-6 rounded-lg static-top-border">
-                    <div class="flex flex-col md:flex-row md:items-center">
-                        <div class="md:w-1/4 mb-4 md:mb-0">
-                            <div class="text-hacker-green font-bold text-lg">10:30 - 11:00</div>
-                            <div class="text-sm text-gray-400">Coffee Break</div>
-                        </div>
-                        <div class="md:w-3/4">
-                            <h3 class="text-xl font-bold text-warning-red">Networking Break</h3>
-                            <p class="text-gray-400 mt-1">Café, networking e troca de experiências</p>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- 11:00 -->
-                <div class="bg-terminal-black/70 p-6 rounded-lg static-top-border">
-                    <div class="flex flex-col md:flex-row md:items-center">
-                        <div class="md:w-1/4 mb-4 md:mb-0">
-                            <div class="text-hacker-green font-bold text-lg">11:00 - 12:00</div>
-                            <div class="text-sm text-gray-400">Sala A & B</div>
-                        </div>
-                        <div class="md:w-3/4">
-                            <h3 class="text-xl font-bold text-matrix-blue">Trilha Dupla</h3>
-                            <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mt-2">
-                                <div class="border-l-4 border-hacker-green pl-4">
-                                    <h4 class="font-bold">Sala A: Advanced Reverse Engineering</h4>
-                                    <p class="text-gray-400 text-sm">Workshop prático de análise de malware</p>
-                                    <span class="text-xs text-hacker-green">Ana Silva - Malware Researcher</span>
-                                </div>
-                                <div class="border-l-4 border-matrix-blue pl-4">
-                                    <h4 class="font-bold">Sala B: Cloud Security Architecture</h4>
-                                    <p class="text-gray-400 text-sm">Segurança em ambientes cloud modernos</p>
-                                    <span class="text-xs text-matrix-blue">Carlos Mendoza - Cloud Architect</span>
-                                </div>
+                    <!-- H2HC University Stage -->
+                    <div
+                        class="bg-terminal-black/90 backdrop-blur-md rounded-lg shadow-lg border-2 border-matrix-blue p-4 md:p-6">
+                        <h2 class="text-2xl font-bold mb-6 text-center text-matrix-blue">H2HC University</h2>
+                        <div class="space-y-4">
+                            <!-- 08:20 -->
+                            <div class="schedule-item border-b border-gray-600 pb-4" data-time="08:20">
+                                <p class="text-lg font-semibold text-matrix-blue">08:20</p>
+                                <p class="font-medium text-gray-500">Palco Fechado</p>
                             </div>
-                        </div>
-                    </div>
-                </div>
 
-                <!-- 12:00 -->
-                <div class="bg-terminal-black/70 p-6 rounded-lg static-top-border">
-                    <div class="flex flex-col md:flex-row md:items-center">
-                        <div class="md:w-1/4 mb-4 md:mb-0">
-                            <div class="text-hacker-green font-bold text-lg">12:00 - 13:30</div>
-                            <div class="text-sm text-gray-400">Área de Alimentação</div>
-                        </div>
-                        <div class="md:w-3/4">
-                            <h3 class="text-xl font-bold text-warning-red">Almoço</h3>
-                            <p class="text-gray-400 mt-1">Pausa para almoço e networking</p>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- 13:30 -->
-                <div class="bg-terminal-black/70 p-6 rounded-lg static-top-border">
-                    <div class="flex flex-col md:flex-row md:items-center">
-                        <div class="md:w-1/4 mb-4 md:mb-0">
-                            <div class="text-hacker-green font-bold text-lg">13:30 - 14:30</div>
-                            <div class="text-sm text-gray-400">Auditório Principal</div>
-                        </div>
-                        <div class="md:w-3/4">
-                            <h3 class="text-xl font-bold text-matrix-blue">Zero-Day Exploits in IoT Devices</h3>
-                            <p class="text-gray-400 mt-1">Demonstração de vulnerabilidades em dispositivos IoT</p>
-                            <div class="flex items-center mt-3">
-                                <div
-                                    class="w-8 h-8 rounded-full bg-warning-red/20 mr-3 flex items-center justify-center">
-                                    <i data-feather="user" class="w-4 h-4 text-warning-red"></i>
-                                </div>
-                                <span class="text-sm">Maria Rodriguez - IoT Security Researcher</span>
+                            <!-- 09:00 -->
+                            <div class="schedule-item border-b border-gray-600 pb-4" data-time="09:00">
+                                <p class="text-lg font-semibold text-matrix-blue">09:00</p>
+                                <p class="font-medium text-gray-500">Palco Fechado</p>
                             </div>
-                        </div>
-                    </div>
-                </div>
 
-                <!-- 14:30 -->
-                <div class="bg-terminal-black/70 p-6 rounded-lg static-top-border">
-                    <div class="flex flex-col md:flex-row md:items-center">
-                        <div class="md:w-1/4 mb-4 md:mb-0">
-                            <div class="text-hacker-green font-bold text-lg">14:30 - 16:00</div>
-                            <div class="text-sm text-gray-400">Área CTF</div>
-                        </div>
-                        <div class="md:w-3/4">
-                            <h3 class="text-xl font-bold text-hacker-green">Capture The Flag - Início</h3>
-                            <p class="text-gray-400 mt-1">Competição de hacking com desafios práticos</p>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- 16:00 -->
-                <div class="bg-terminal-black/70 p-6 rounded-lg static-top-border">
-                    <div class="flex flex-col md:flex-row md:items-center">
-                        <div class="md:w-1/4 mb-4 md:mb-0">
-                            <div class="text-hacker-green font-bold text-lg">16:00 - 17:00</div>
-                            <div class="text-sm text-gray-400">Auditório Principal</div>
-                        </div>
-                        <div class="md:w-3/4">
-                            <h3 class="text-xl font-bold text-matrix-blue">Painel: Futuro da Privacidade Digital</h3>
-                            <p class="text-gray-400 mt-1">Discussão sobre LGPD, GDPR e marcos regulatórios</p>
-                            <div class="flex items-center mt-3">
-                                <div
-                                    class="w-8 h-8 rounded-full bg-matrix-blue/20 mr-3 flex items-center justify-center">
-                                    <i data-feather="users" class="w-4 h-4 text-matrix-blue"></i>
-                                </div>
-                                <span class="text-sm">Painel com 4 especialistas</span>
+                            <!-- 09:30 -->
+                            <div class="schedule-item border-b border-gray-600 pb-4" data-time="09:30">
+                                <p class="text-lg font-semibold text-matrix-blue">09:30</p>
+                                <p class="font-medium text-white">Desmistificando Jackpotting em ATM</p>
+                                <p class="text-sm text-gray-400 mt-1">xxxxxxxx - ATM Security Specialist, FinTech
+                                    Security</p>
                             </div>
-                        </div>
-                    </div>
-                </div>
 
-                <!-- 17:00 -->
-                <div class="bg-terminal-black/70 p-6 rounded-lg static-top-border">
-                    <div class="flex flex-col md:flex-row md:items-center">
-                        <div class="md:w-1/4 mb-4 md:mb-0">
-                            <div class="text-hacker-green font-bold text-lg">17:00 - 18:00</div>
-                            <div class="text-sm text-gray-400">Área Social</div>
-                        </div>
-                        <div class="md:w-3/4">
-                            <h3 class="text-xl font-bold text-warning-red">Happy Hour de Encerramento</h3>
-                            <p class="text-gray-400 mt-1">Networking, drinks e confraternização</p>
+                            <!-- 10:30 -->
+                            <div class="schedule-item border-b border-gray-600 pb-4" data-time="10:30">
+                                <p class="text-lg font-semibold text-matrix-blue">10:30</p>
+                                <p class="font-medium text-white">Bate-papo sobre H2HC, Hacking, Comunidade e Carreira
+                                </p>
+                                <p class="text-sm text-gray-400 mt-1">Painel com veteranos da comunidade</p>
+                            </div>
+
+                            <!-- 11:30 -->
+                            <div class="schedule-item border-b border-gray-600 pb-4" data-time="11:30">
+                                <p class="text-lg font-semibold text-matrix-blue">11:30</p>
+                                <p class="font-medium text-white">Bate-papo sobre H2HC, Hacking, Comunidade e Carreira
+                                </p>
+                                <p class="text-sm text-gray-400 mt-1">Continuação do painel</p>
+                            </div>
+
+                            <!-- 12:30 -->
+                            <div class="schedule-item border-b border-gray-600 pb-4" data-time="12:30">
+                                <p class="text-lg font-semibold text-matrix-blue">12:30</p>
+                                <p class="text-white font-medium">Intervalo para Almoço</p>
+                            </div>
+
+                            <!-- 14:00 -->
+                            <div class="schedule-item border-b border-gray-600 pb-4" data-time="14:00">
+                                <p class="text-lg font-semibold text-matrix-blue">14:00</p>
+                                <p class="font-medium text-white">Hacker math: fundamental research challenges hidden in
+                                    plain sight</p>
+                                <p class="text-sm text-gray-400 mt-1">xxxxxxxx - Mathematics Department,
+                                    Stanford University</p>
+                            </div>
+
+                            <!-- 15:00 -->
+                            <div class="schedule-item border-b border-gray-600 pb-4" data-time="15:00">
+                                <p class="text-lg font-semibold text-matrix-blue">15:00</p>
+                                <p class="font-medium text-white">Security Assessments of Internet Protocols</p>
+                                <p class="text-sm text-gray-400 mt-1">xxxxxxxx - Network Security Analyst, Cisco Talos
+                                </p>
+                            </div>
+
+                            <!-- 16:00 -->
+                            <div class="schedule-item border-b border-gray-600 pb-4" data-time="16:00">
+                                <p class="text-lg font-semibold text-matrix-blue">16:00</p>
+                                <p class="text-white font-medium">Intervalo</p>
+                            </div>
+
+                            <!-- 16:30 -->
+                            <div class="schedule-item border-b border-gray-600 pb-4" data-time="16:30">
+                                <p class="text-lg font-semibold text-matrix-blue">16:30</p>
+                                <p class="font-medium text-white">Insert coin: Hacking arcades for fun</p>
+                                <p class="text-sm text-gray-400 mt-1">xxxxxxxx - Hardware Hacker, Independent
+                                    Researcher</p>
+                            </div>
+
+                            <!-- 17:30 -->
+                            <div class="schedule-item border-b border-gray-600 pb-4" data-time="17:30">
+                                <p class="text-lg font-semibold text-matrix-blue">17:30</p>
+                                <p class="font-medium text-white">NFC Card Password Bypass</p>
+                                <p class="text-sm text-gray-400 mt-1">xxxxxxxx - NFC Security Expert, NXP
+                                    Semiconductors</p>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
 
-            <!-- Day 2 Schedule (Initially Hidden) -->
-            <div id="day2-schedule" class="hidden space-y-4 max-w-6xl mx-auto">
-                <!-- 09:00 -->
-                <div class="bg-terminal-black/70 p-6 rounded-lg static-top-border">
-                    <div class="flex flex-col md:flex-row md:items-center">
-                        <div class="md:w-1/4 mb-4 md:mb-0">
-                            <div class="text-hacker-green font-bold text-lg">09:00 - 09:30</div>
-                            <div class="text-sm text-gray-400">Auditório Principal</div>
-                        </div>
-                        <div class="md:w-3/4">
-                            <h3 class="text-xl font-bold text-matrix-blue">Welcome Day 2</h3>
-                            <p class="text-gray-400 mt-1">Bom dia e coffee networking</p>
-                        </div>
-                    </div>
-                </div>
 
-                <!-- 09:30 -->
-                <div class="bg-terminal-black/70 p-6 rounded-lg static-top-border">
-                    <div class="flex flex-col md:flex-row md:items-center">
-                        <div class="md:w-1/4 mb-4 md:mb-0">
-                            <div class="text-hacker-green font-bold text-lg">09:30 - 10:30</div>
-                            <div class="text-sm text-gray-400">Auditório Principal</div>
-                        </div>
-                        <div class="md:w-3/4">
-                            <h3 class="text-xl font-bold text-matrix-blue">Advanced Persistent Threats (APT)</h3>
-                            <p class="text-gray-400 mt-1">Análise de campanhas APT na América Latina</p>
-                            <div class="flex items-center mt-3">
-                                <div
-                                    class="w-8 h-8 rounded-full bg-warning-red/20 mr-3 flex items-center justify-center">
-                                    <i data-feather="user" class="w-4 h-4 text-warning-red"></i>
-                                </div>
-                                <span class="text-sm">Dr. Paulo Henrique - Threat Intelligence</span>
+            <!-- Day 2 Schedule -->
+            <div id="day2-schedule" class="hidden">
+                <div class="grid md:grid-cols-2 gap-6 items-start">
+                    <!-- H2HC Main Stage -->
+                    <div
+                        class="bg-terminal-black/90 backdrop-blur-md rounded-lg shadow-lg border-2 border-hacker-green p-4 md:p-6">
+                        <h2 class="text-2xl font-bold mb-6 text-center text-matrix-blue">H2HC</h2>
+                        <div class="space-y-4">
+                            <div class="schedule-item border-b border-gray-600 pb-4" data-time="10:00">
+                                <p class="text-lg font-semibold text-matrix-blue">10:00</p>
+                                <p class="font-medium text-white">Keynote: False Injections: Tales of Physics,
+                                    Misconceptions and Weird Machines</p>
+                                <p class="text-sm text-gray-400 mt-1">xxxxxxxx - Professor of Computer
+                                    Science, UC Berkeley</p>
+                            </div>
+                            <div class="schedule-item border-b border-gray-600 pb-4" data-time="11:00">
+                                <p class="text-lg font-semibold text-matrix-blue">11:00</p>
+                                <p class="font-medium text-white">Testing CPU Vulnerabilities mitigations in the Linux
+                                    Kernel</p>
+                                <p class="text-sm text-gray-400 mt-1">xxxxxxxx - Kernel Security Engineer, Linux
+                                    Foundation</p>
+                            </div>
+                            <div class="schedule-item border-b border-gray-600 pb-4" data-time="12:00">
+                                <p class="text-lg font-semibold text-matrix-blue">12:00</p>
+                                <p class="text-white font-medium">Intervalo para Almoço</p>
+                            </div>
+                            <div class="schedule-item border-b border-gray-600 pb-4" data-time="13:30">
+                                <p class="text-lg font-semibold text-matrix-blue">13:30</p>
+                                <p class="font-medium text-white">How to Fuzz Your Way to Android Universal Root:
+                                    Attacking Android Binder</p>
+                                <p class="text-sm text-gray-400 mt-1">xxxxxxxx - Mobile Security Lead, Google
+                                    Android Security</p>
+                            </div>
+                            <div class="schedule-item border-b border-gray-600 pb-4" data-time="14:30">
+                                <p class="text-lg font-semibold text-matrix-blue">14:30</p>
+                                <p class="font-medium text-white">BYOB - Bring Your Own Backdoor</p>
+                                <p class="text-sm text-gray-400 mt-1">xxxxxxxx - Offensive Security Researcher,
+                                    Offensive Security</p>
+                            </div>
+                            <div class="schedule-item border-b border-gray-600 pb-4" data-time="15:30">
+                                <p class="text-lg font-semibold text-matrix-blue">15:30</p>
+                                <p class="text-white font-medium">Intervalo</p>
+                            </div>
+                            <div class="schedule-item border-b border-gray-600 pb-4" data-time="16:01">
+                                <p class="text-lg font-semibold text-matrix-blue">16:01</p>
+                                <p class="font-medium text-white">You Can't Detect Me if You Don't Know I Exist - Using
+                                    OOB Techniques to Break the Rules</p>
+                                <p class="text-sm text-gray-400 mt-1">xxxxxxxx - Red Team Lead, CrowdStrike</p>
+                            </div>
+                            <div class="schedule-item border-b border-gray-600 pb-4" data-time="17:00">
+                                <p class="text-lg font-semibold text-matrix-blue">17:00</p>
+                                <p class="font-medium text-white">What every hacker should know about TLB invalidation
+                                </p>
+                                <p class="text-sm text-gray-400 mt-1">xxxxxxxx - Computer Architecture
+                                    Researcher, AMD Research</p>
                             </div>
                         </div>
                     </div>
-                </div>
 
-                <!-- 10:30 -->
-                <div class="bg-terminal-black/70 p-6 rounded-lg static-top-border">
-                    <div class="flex flex-col md:flex-row md:items-center">
-                        <div class="md:w-1/4 mb-4 md:mb-0">
-                            <div class="text-hacker-green font-bold text-lg">10:30 - 12:00</div>
-                            <div class="text-sm text-gray-400">Sala A & B</div>
-                        </div>
-                        <div class="md:w-3/4">
-                            <h3 class="text-xl font-bold text-matrix-blue">Workshops Avançados</h3>
-                            <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mt-2">
-                                <div class="border-l-4 border-hacker-green pl-4">
-                                    <h4 class="font-bold">Sala A: Red Team Operations</h4>
-                                    <p class="text-gray-400 text-sm">Técnicas avançadas de penetration testing</p>
-                                    <span class="text-xs text-hacker-green">João Santos - Red Team Lead</span>
-                                </div>
-                                <div class="border-l-4 border-matrix-blue pl-4">
-                                    <h4 class="font-bold">Sala B: Blockchain Security</h4>
-                                    <p class="text-gray-400 text-sm">Vulnerabilidades em smart contracts</p>
-                                    <span class="text-xs text-matrix-blue">Laura Costa - Blockchain Developer</span>
-                                </div>
+                    <!-- H2HC University Stage -->
+                    <div
+                        class="bg-terminal-black/90 backdrop-blur-md rounded-lg shadow-lg border-2 border-matrix-blue p-4 md:p-6">
+                        <h2 class="text-2xl font-bold mb-6 text-center text-matrix-blue">H2HC University</h2>
+                        <div class="space-y-4">
+                            <div class="schedule-item border-b border-gray-600 pb-4" data-time="10:00">
+                                <p class="text-lg font-semibold text-matrix-blue">10:00</p>
+                                <p class="font-medium text-gray-500">Palco Fechado</p>
                             </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- 12:00 -->
-                <div class="bg-terminal-black/70 p-6 rounded-lg static-top-border">
-                    <div class="flex flex-col md:flex-row md:items-center">
-                        <div class="md:w-1/4 mb-4 md:mb-0">
-                            <div class="text-hacker-green font-bold text-lg">12:00 - 13:30</div>
-                            <div class="text-sm text-gray-400">Área de Alimentação</div>
-                        </div>
-                        <div class="md:w-3/4">
-                            <h3 class="text-xl font-bold text-warning-red">Almoço</h3>
-                            <p class="text-gray-400 mt-1">Pausa para almoço e networking</p>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- 13:30 -->
-                <div class="bg-terminal-black/70 p-6 rounded-lg static-top-border">
-                    <div class="flex flex-col md:flex-row md:items-center">
-                        <div class="md:w-1/4 mb-4 md:mb-0">
-                            <div class="text-hacker-green font-bold text-lg">13:30 - 14:30</div>
-                            <div class="text-sm text-gray-400">Auditório Principal</div>
-                        </div>
-                        <div class="md:w-3/4">
-                            <h3 class="text-xl font-bold text-matrix-blue">AI Security: Attacks and Defense</h3>
-                            <p class="text-gray-400 mt-1">Como proteger e atacar sistemas de IA</p>
-                            <div class="flex items-center mt-3">
-                                <div
-                                    class="w-8 h-8 rounded-full bg-hacker-green/20 mr-3 flex items-center justify-center">
-                                    <i data-feather="user" class="w-4 h-4 text-hacker-green"></i>
-                                </div>
-                                <span class="text-sm">Dr. Amanda Silva - AI Security Researcher</span>
+                            <div class="schedule-item border-b border-gray-600 pb-4" data-time="11:00">
+                                <p class="text-lg font-semibold text-matrix-blue">11:00</p>
+                                <p class="font-medium text-white">T50: A short tour of its trajectory (15 years'
+                                    warm-up)</p>
+                                <p class="text-sm text-gray-400 mt-1">xxxxxxxx - Creator of T50, Independent
+                                    Security Researcher</p>
                             </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- 14:30 -->
-                <div class="bg-terminal-black/70 p-6 rounded-lg static-top-border">
-                    <div class="flex flex-col md:flex-row md:items-center">
-                        <div class="md:w-1/4 mb-4 md:mb-0">
-                            <div class="text-hacker-green font-bold text-lg">14:30 - 15:30</div>
-                            <div class="text-sm text-gray-400">Área CTF</div>
-                        </div>
-                        <div class="md:w-3/4">
-                            <h3 class="text-xl font-bold text-hacker-green">CTF - Final e Premiação</h3>
-                            <p class="text-gray-400 mt-1">Finalização da competição e premiação dos vencedores</p>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- 15:30 -->
-                <div class="bg-terminal-black/70 p-6 rounded-lg static-top-border">
-                    <div class="flex flex-col md:flex-row md:items-center">
-                        <div class="md:w-1/4 mb-4 md:mb-0">
-                            <div class="text-hacker-green font-bold text-lg">15:30 - 16:30</div>
-                            <div class="text-sm text-gray-400">Auditório Principal</div>
-                        </div>
-                        <div class="md:w-3/4">
-                            <h3 class="text-xl font-bold text-matrix-blue">Mobile Security: Beyond the Basics</h3>
-                            <p class="text-gray-400 mt-1">Técnicas avançadas de análise de apps móveis</p>
-                            <div class="flex items-center mt-3">
-                                <div
-                                    class="w-8 h-8 rounded-full bg-matrix-blue/20 mr-3 flex items-center justify-center">
-                                    <i data-feather="user" class="w-4 h-4 text-matrix-blue"></i>
-                                </div>
-                                <span class="text-sm">Roberto Lima - Mobile Security Expert</span>
+                            <div class="schedule-item border-b border-gray-600 pb-4" data-time="12:00">
+                                <p class="text-lg font-semibold text-matrix-blue">12:00</p>
+                                <p class="text-white font-medium">Intervalo para Almoço</p>
                             </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- 16:30 -->
-                <div class="bg-terminal-black/70 p-6 rounded-lg static-top-border">
-                    <div class="flex flex-col md:flex-row md:items-center">
-                        <div class="md:w-1/4 mb-4 md:mb-0">
-                            <div class="text-hacker-green font-bold text-lg">16:30 - 17:30</div>
-                            <div class="text-sm text-gray-400">Auditório Principal</div>
-                        </div>
-                        <div class="md:w-3/4">
-                            <h3 class="text-xl font-bold text-warning-red">Keynote de Encerramento</h3>
-                            <p class="text-gray-400 mt-1">O Futuro da Segurança Cibernética: Próximos Desafios</p>
-                            <div class="flex items-center mt-3">
-                                <div
-                                    class="w-8 h-8 rounded-full bg-warning-red/20 mr-3 flex items-center justify-center">
-                                    <i data-feather="user" class="w-4 h-4 text-warning-red"></i>
-                                </div>
-                                <span class="text-sm">Prof. Dr. Elena Martinez - International Keynote</span>
+                            <div class="schedule-item border-b border-gray-600 pb-4" data-time="13:30">
+                                <p class="text-lg font-semibold text-matrix-blue">13:30</p>
+                                <p class="font-medium text-white">Anatomia de um mini-AS</p>
+                                <p class="text-sm text-gray-400 mt-1">xxxxxxxx - Network Architect, NIC.br</p>
                             </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- 17:30 -->
-                <div class="bg-terminal-black/70 p-6 rounded-lg static-top-border">
-                    <div class="flex flex-col md:flex-row md:items-center">
-                        <div class="md:w-1/4 mb-4 md:mb-0">
-                            <div class="text-hacker-green font-bold text-lg">17:30 - 19:00</div>
-                            <div class="text-sm text-gray-400">Área Social</div>
-                        </div>
-                        <div class="md:w-3/4">
-                            <h3 class="text-xl font-bold text-hacker-green">Encerramento e After Party</h3>
-                            <p class="text-gray-400 mt-1">Festa de encerramento com música, drinks e networking</p>
+                            <div class="schedule-item border-b border-gray-600 pb-4" data-time="14:30">
+                                <p class="text-lg font-semibold text-matrix-blue">14:30</p>
+                                <p class="font-medium text-white">Lessons from the Frontlines: A Journey in Linux Kernel
+                                    Vulnerability Discovery</p>
+                                <p class="text-sm text-gray-400 mt-1">xxxxxxxx - Vulnerability Researcher, ZDI</p>
+                            </div>
+                            <div class="schedule-item border-b border-gray-600 pb-4" data-time="15:30">
+                                <p class="text-lg font-semibold text-matrix-blue">15:30</p>
+                                <p class="text-white font-medium">Intervalo</p>
+                            </div>
+                            <div class="schedule-item border-b border-gray-600 pb-4" data-time="16:01">
+                                <p class="text-lg font-semibold text-matrix-blue">16:01</p>
+                                <p class="font-medium text-white">Unleashing a 0day: Pivoting Capabilities and
+                                    Conquering the Linux Kernel</p>
+                                <p class="text-sm text-gray-400 mt-1">xxxxxxxx - Security Researcher, Trail of
+                                    Bits</p>
+                            </div>
+                            <div class="schedule-item border-b border-gray-600 pb-4" data-time="17:00">
+                                <p class="text-lg font-semibold text-matrix-blue">17:00</p>
+                                <p class="font-medium text-gray-500">Palco Fechado</p>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
     </section>
+
 
 
     <!-- Sponsors Section -->
@@ -613,43 +608,104 @@
                 <div class="w-24 h-1 bg-hacker-green mx-auto mt-4"></div>
             </div>
 
-            <!-- Gold Sponsors -->
+            <!-- Silver Sponsors -->
             <div class="mb-16">
                 <div class="text-center mb-8">
-                    <h3 class="text-2xl font-bold text-yellow-400 mb-2">Nível Ouro</h3>
-                    <div class="w-16 h-0.5 bg-yellow-400 mx-auto"></div>
+                    <h3 class="text-2xl font-bold text-gray-300 mb-2">Organização</h3>
+                    <div class="w-16 h-0.5 bg-gray-300 mx-auto"></div>
                 </div>
+                <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-3 gap-6 items-center">
+                    <div></div>
+                    <div class="bg-gray-900 p-4 rounded-lg flex items-center justify-center h-28 relative group">
+                        <span class="text-lg font-bold text-gray-300">CryptoNet</span>
+                        <div
+                            class="absolute inset-0 bg-gray-800 rounded-lg opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+                            <img src="http://static.photos/technology/120x60/602" alt="CryptoNet Logo"
+                                class="max-w-full max-h-full object-contain">
+                        </div>
+                    </div>
+                    <div></div>
+                </div>
+            </div>
 
+            <!-- Silver Sponsors -->
+            <div class="mb-16">
+                <div class="text-center mb-8">
+                    <h3 class="text-2xl font-bold text-gray-300 mb-2">Patrocinadores Platinum</h3>
+                    <div class="w-16 h-0.5 bg-gray-300 mx-auto"></div>
+                </div>
                 <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 items-center">
                     <div class="bg-gray-900 p-4 rounded-lg flex items-center justify-center h-28 relative group">
-                        <span class="text-lg font-bold text-yellow-400">CyberShield Elite</span>
+                        <span class="text-lg font-bold text-gray-300">SecureBot</span>
                         <div
                             class="absolute inset-0 bg-gray-800 rounded-lg opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
-                            <img src="http://static.photos/technology/120x60/501" alt="CyberShield Logo"
+                            <img src="http://static.photos/technology/120x60/601" alt="SecureBot Logo"
                                 class="max-w-full max-h-full object-contain">
                         </div>
                     </div>
                     <div class="bg-gray-900 p-4 rounded-lg flex items-center justify-center h-28 relative group">
-                        <span class="text-lg font-bold text-yellow-400">SecureMax Pro</span>
+                        <span class="text-lg font-bold text-gray-300">CryptoNet</span>
                         <div
                             class="absolute inset-0 bg-gray-800 rounded-lg opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
-                            <img src="http://static.photos/technology/120x60/502" alt="SecureMax Logo"
+                            <img src="http://static.photos/technology/120x60/602" alt="CryptoNet Logo"
                                 class="max-w-full max-h-full object-contain">
                         </div>
                     </div>
                     <div class="bg-gray-900 p-4 rounded-lg flex items-center justify-center h-28 relative group">
-                        <span class="text-lg font-bold text-yellow-400">DataGuard Premium</span>
+                        <span class="text-lg font-bold text-gray-300">ByteDefender</span>
                         <div
                             class="absolute inset-0 bg-gray-800 rounded-lg opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
-                            <img src="http://static.photos/technology/120x60/503" alt="DataGuard Logo"
+                            <img src="http://static.photos/technology/120x60/603" alt="ByteDefender Logo"
                                 class="max-w-full max-h-full object-contain">
                         </div>
                     </div>
                     <div class="bg-gray-900 p-4 rounded-lg flex items-center justify-center h-28 relative group">
-                        <span class="text-lg font-bold text-yellow-400">TechSecure Gold</span>
+                        <span class="text-lg font-bold text-gray-300">NetShield</span>
                         <div
                             class="absolute inset-0 bg-gray-800 rounded-lg opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
-                            <img src="http://static.photos/technology/120x60/504" alt="TechSecure Logo"
+                            <img src="http://static.photos/technology/120x60/604" alt="NetShield Logo"
+                                class="max-w-full max-h-full object-contain">
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+             <!-- Silver Sponsors -->
+            <div class="mb-16">
+                <div class="text-center mb-8">
+                    <h3 class="text-2xl font-bold text-gray-300 mb-2">Patrocinadores Ouro</h3>
+                    <div class="w-16 h-0.5 bg-gray-300 mx-auto"></div>
+                </div>
+                <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 items-center">
+                    <div class="bg-gray-900 p-4 rounded-lg flex items-center justify-center h-28 relative group">
+                        <span class="text-lg font-bold text-gray-300">SecureBot</span>
+                        <div
+                            class="absolute inset-0 bg-gray-800 rounded-lg opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+                            <img src="http://static.photos/technology/120x60/601" alt="SecureBot Logo"
+                                class="max-w-full max-h-full object-contain">
+                        </div>
+                    </div>
+                    <div class="bg-gray-900 p-4 rounded-lg flex items-center justify-center h-28 relative group">
+                        <span class="text-lg font-bold text-gray-300">CryptoNet</span>
+                        <div
+                            class="absolute inset-0 bg-gray-800 rounded-lg opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+                            <img src="http://static.photos/technology/120x60/602" alt="CryptoNet Logo"
+                                class="max-w-full max-h-full object-contain">
+                        </div>
+                    </div>
+                    <div class="bg-gray-900 p-4 rounded-lg flex items-center justify-center h-28 relative group">
+                        <span class="text-lg font-bold text-gray-300">ByteDefender</span>
+                        <div
+                            class="absolute inset-0 bg-gray-800 rounded-lg opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+                            <img src="http://static.photos/technology/120x60/603" alt="ByteDefender Logo"
+                                class="max-w-full max-h-full object-contain">
+                        </div>
+                    </div>
+                    <div class="bg-gray-900 p-4 rounded-lg flex items-center justify-center h-28 relative group">
+                        <span class="text-lg font-bold text-gray-300">NetShield</span>
+                        <div
+                            class="absolute inset-0 bg-gray-800 rounded-lg opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+                            <img src="http://static.photos/technology/120x60/604" alt="NetShield Logo"
                                 class="max-w-full max-h-full object-contain">
                         </div>
                     </div>
@@ -659,7 +715,7 @@
             <!-- Silver Sponsors -->
             <div class="mb-16">
                 <div class="text-center mb-8">
-                    <h3 class="text-2xl font-bold text-gray-300 mb-2">Nível Prata</h3>
+                    <h3 class="text-2xl font-bold text-gray-300 mb-2">Patrocinadores Prata</h3>
                     <div class="w-16 h-0.5 bg-gray-300 mx-auto"></div>
                 </div>
                 <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 items-center">
@@ -701,7 +757,64 @@
             <!-- Regular Sponsors -->
             <div class="mb-16">
                 <div class="text-center mb-8">
-                    <h3 class="text-2xl font-bold text-gray-200 mb-2">Outros</h3>
+                    <h3 class="text-2xl font-bold text-gray-200 mb-2">Hacking</h3>
+                    <div class="w-16 h-0.5 bg-gray-200 mx-auto"></div>
+                </div>
+                <div class="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-4 items-center">
+                    <div class="bg-gray-900 p-3 rounded-lg flex items-center justify-center h-24 relative group">
+                        <span class="text-sm font-bold text-gray-200">TechSec</span>
+                        <div
+                            class="absolute inset-0 bg-gray-800 rounded-lg opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+                            <img src="http://static.photos/technology/100x50/701" alt="TechSec Logo"
+                                class="max-w-full max-h-full object-contain">
+                        </div>
+                    </div>
+                    <div class="bg-gray-900 p-3 rounded-lg flex items-center justify-center h-24 relative group">
+                        <span class="text-sm font-bold text-gray-200">InfoGuard</span>
+                        <div
+                            class="absolute inset-0 bg-gray-800 rounded-lg opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+                            <img src="http://static.photos/technology/100x50/702" alt="InfoGuard Logo"
+                                class="max-w-full max-h-full object-contain">
+                        </div>
+                    </div>
+                    <div class="bg-gray-900 p-3 rounded-lg flex items-center justify-center h-24 relative group">
+                        <span class="text-sm font-bold text-gray-200">CyberTech</span>
+                        <div
+                            class="absolute inset-0 bg-gray-800 rounded-lg opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+                            <img src="http://static.photos/technology/100x50/703" alt="CyberTech Logo"
+                                class="max-w-full max-h-full object-contain">
+                        </div>
+                    </div>
+                    <div class="bg-gray-900 p-3 rounded-lg flex items-center justify-center h-24 relative group">
+                        <span class="text-sm font-bold text-gray-200">SecureLab</span>
+                        <div
+                            class="absolute inset-0 bg-gray-800 rounded-lg opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+                            <img src="http://static.photos/technology/100x50/704" alt="SecureLab Logo"
+                                class="max-w-full max-h-full object-contain">
+                        </div>
+                    </div>
+                    <div class="bg-gray-900 p-3 rounded-lg flex items-center justify-center h-24 relative group">
+                        <span class="text-sm font-bold text-gray-200">NetSecure</span>
+                        <div
+                            class="absolute inset-0 bg-gray-800 rounded-lg opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+                            <img src="http://static.photos/technology/100x50/705" alt="NetSecure Logo"
+                                class="max-w-full max-h-full object-contain">
+                        </div>
+                    </div>
+                    <div class="bg-gray-900 p-3 rounded-lg flex items-center justify-center h-24 relative group">
+                        <span class="text-sm font-bold text-gray-200">DataShield</span>
+                        <div
+                            class="absolute inset-0 bg-gray-800 rounded-lg opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+                            <img src="http://static.photos/technology/100x50/706" alt="DataShield Logo"
+                                class="max-w-full max-h-full object-contain">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Regular Sponsors -->
+            <div class="mb-16">
+                <div class="text-center mb-8">
+                    <h3 class="text-2xl font-bold text-gray-200 mb-2">Organização de apoio</h3>
                     <div class="w-16 h-0.5 bg-gray-200 mx-auto"></div>
                 </div>
                 <div class="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-4 items-center">
@@ -928,5 +1041,117 @@
 </body>
 
 <script src="./index.js"></script>
+
+<!-- JavaScript para o Countdown -->
+<script>
+    // Countdown Timer para 13 de dezembro de 2025 às 09:00
+    function updateCountdown() {
+        const eventDate = new Date('December 13, 2025 09:00:00 GMT-0300').getTime();
+        const now = new Date().getTime();
+        const distance = eventDate - now;
+
+        const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+        const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+        const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+        const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+        document.getElementById('days').textContent = String(days).padStart(2, '0');
+        document.getElementById('hours').textContent = String(hours).padStart(2, '0');
+        document.getElementById('minutes').textContent = String(minutes).padStart(2, '0');
+        document.getElementById('seconds').textContent = String(seconds).padStart(2, '0');
+
+        if (distance < 0) {
+            clearInterval(countdownInterval);
+            document.getElementById('days').textContent = '00';
+            document.getElementById('hours').textContent = '00';
+            document.getElementById('minutes').textContent = '00';
+            document.getElementById('seconds').textContent = '00';
+        }
+    }
+    updateCountdown();
+    const countdownInterval = setInterval(updateCountdown, 1000);
+
+
+
+    function showDay(day) {
+        const day1Schedule = document.getElementById('day1-schedule');
+        const day2Schedule = document.getElementById('day2-schedule');
+        const day1Tab = document.getElementById('day1-tab');
+        const day2Tab = document.getElementById('day2-tab');
+
+        if (day === 'day1') {
+            day1Schedule.classList.remove('hidden');
+            day2Schedule.classList.add('hidden');
+            day1Tab.classList.remove('bg-terminal-black', 'text-gray-300', 'border', 'border-gray-600');
+            day1Tab.classList.add('bg-hacker-green', 'text-terminal-black');
+            day2Tab.classList.remove('bg-hacker-green', 'text-terminal-black');
+            day2Tab.classList.add('bg-terminal-black', 'text-gray-300', 'border', 'border-gray-600');
+        } else {
+            day1Schedule.classList.add('hidden');
+            day2Schedule.classList.remove('hidden');
+            day2Tab.classList.remove('bg-terminal-black', 'text-gray-300', 'border', 'border-gray-600');
+            day2Tab.classList.add('bg-hacker-green', 'text-terminal-black');
+            day1Tab.classList.remove('bg-hacker-green', 'text-terminal-black');
+            day1Tab.classList.add('bg-terminal-black', 'text-gray-300', 'border', 'border-gray-600');
+        }
+
+        // Sincroniza as alturas após trocar de dia com delay maior
+        setTimeout(syncScheduleHeights, 150);
+    }
+    function syncScheduleHeights() {
+        // Identifica qual dia está visível
+        const day1Visible = !document.getElementById('day1-schedule').classList.contains('hidden');
+        const day2Visible = !document.getElementById('day2-schedule').classList.contains('hidden');
+
+        // Seleciona apenas os itens do dia visível
+        const currentDayId = day1Visible ? 'day1-schedule' : 'day2-schedule';
+
+        // Pega todos os horários únicos do dia atual
+        const times = new Set();
+        document.querySelectorAll(`#${currentDayId} .schedule-item[data-time]`).forEach(item => {
+            times.add(item.getAttribute('data-time'));
+        });
+
+        // Para cada horário, sincroniza a altura entre as duas colunas
+        times.forEach(time => {
+            const items = document.querySelectorAll(`#${currentDayId} .schedule-item[data-time="${time}"]`);
+
+            if (items.length >= 2) {
+                // Reseta as alturas primeiro
+                items.forEach(item => item.style.minHeight = 'auto');
+
+                // Força o navegador a recalcular o layout
+                items.forEach(item => item.offsetHeight);
+
+                // Pequeno delay para garantir que o DOM foi renderizado
+                requestAnimationFrame(() => {
+                    // Calcula a maior altura
+                    let maxHeight = 0;
+                    items.forEach(item => {
+                        const height = item.getBoundingClientRect().height;
+                        if (height > maxHeight) maxHeight = height;
+                    });
+
+                    // Aplica a maior altura para ambos
+                    items.forEach(item => {
+                        item.style.minHeight = Math.ceil(maxHeight) + 'px';
+                    });
+                });
+            }
+        });
+    }
+
+    // Sincroniza as alturas quando a página carrega
+    window.addEventListener('load', () => {
+        setTimeout(syncScheduleHeights, 200);
+    });
+
+    // Re-sincroniza quando a janela é redimensionada
+    let resizeTimeout;
+    window.addEventListener('resize', () => {
+        clearTimeout(resizeTimeout);
+        resizeTimeout = setTimeout(syncScheduleHeights, 200);
+    });
+</script>
 
 </html>
