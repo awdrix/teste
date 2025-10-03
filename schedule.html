@@ -1,0 +1,579 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>H2HC - Latin America's Premier Hacking Conference</title>
+    <!-- Favicon personalizado com ícone de cadeado -->
+    <link rel="icon" type="image/x-icon" href="images/logo-h2hcbgblack.png" />
+
+    <!-- CSS Framework e bibliotecas de animação -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+
+    <!-- Biblioteca de ícones -->
+    <script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>
+
+    <!-- 3D Background - Three.js e Vanta.js -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r134/three.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vanta@latest/dist/vanta.globe.min.js"></script>
+    <script src="./tailwind.js"></script>
+    <link rel="stylesheet" href="./styles.css" />
+</head>
+
+<body class="dotted-pattern-bg text-gray-200 font-['JetBrains_Mono']">
+    <!-- Navigation -->
+    <nav class="bg-terminal-black/90 backdrop-blur-md sticky top-0 z-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between h-16 items-center">
+                <div class="flex-shrink-0 flex items-center">
+                    <a href="index.html"
+                        class="text-hacker-green font-['Share_Tech_Mono'] text-2xl font-bold hover:text-hacker-green/80 transition">H2HC</a>
+                    <span class="ml-2 text-sm bg-warning-red text-white px-2 py-2 rounded">BRASIL</span>
+                </div>
+                <div class="hidden md:block">
+                    <div class="ml-10 flex items-center space-x-8">
+                        <a href="index.html"
+                            class="text-gray-300 hover:text-hacker-green transition text-mono uppercase tracking-wider">Início</a>
+                        <a href="about.html"
+                            class="text-gray-300 hover:text-hacker-green transition text-mono uppercase tracking-wider">Sobre</a>
+                        <a href="speakers.html"
+                            class="text-gray-300 hover:text-hacker-green transition text-mono uppercase tracking-wider">Palestrantes</a>
+                        <a href="schedule.html"
+                            class="text-gray-300 hover:text-hacker-green transition text-mono uppercase tracking-wider">Programação</a>
+                        <a href="sponsors.html"
+                            class="text-gray-300 hover:text-hacker-green transition text-mono uppercase tracking-wider">Patrocinadores</a>
+                        <a href="magazines.html"
+                            class="text-gray-300 hover:text-hacker-green transition text-mono uppercase tracking-wider">Revistas</a>
+                        <a href="tickets.html"
+                            class="bg-hacker-green text-terminal-black px-4 py-2 rounded-md font-bold hover:bg-opacity-80 transition text-mono">INGRESSOS</a>
+                    </div>
+                </div>
+                <div class="md:hidden">
+                    <button id="mobile-menu" onclick="toggleMenu()">
+                        <i data-feather="menu" class="text-hacker-green"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+        <!-- Mobile Menu -->
+        <div id="mobile-nav" class="hidden md:hidden bg-terminal-black/95 p-4">
+            <div class="flex flex-col space-y-4">
+                <a href="index.html" class="text-gray-300 hover:text-hacker-green transition">Início</a>
+                <a href="about.html" class="text-gray-300 hover:text-hacker-green transition">Sobre</a>
+                <a href="speakers.html" class="text-gray-300 hover:text-hacker-green transition">Palestrantes</a>
+                <a href="schedule.html" class="text-gray-300 hover:text-hacker-green transition">Programação</a>
+                <a href="sponsors.html" class="text-gray-300 hover:text-hacker-green transition">Patrocinadores</a>
+                <a href="magazines.html" class="text-gray-300 hover:text-hacker-green transition">Revistas</a>
+                <a href="tickets.html"
+                    class="bg-hacker-green text-terminal-black px-4 py-2 rounded-md font-bold text-center">Ingressos</a>
+            </div>
+        </div>
+    </nav>
+    <!-- Schedule Section -->
+    <section id="schedule" class="py-20 bg-terminal-black/80 backdrop-blur-sm">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-5xl font-bold font-['Share_Tech_Mono'] text-glow-red">
+                    Agenda do Evento
+                </h2>
+                <div class="w-24 h-1 bg-warning-red mx-auto mt-4"></div>
+                <p class="max-w-2xl mx-auto mt-6 text-gray-400">
+                    Dois dias de palestras técnicas em dois palcos simultâneos
+                </p>
+            </div>
+
+            <!-- Day Tabs -->
+            <div class="flex justify-center mb-8">
+                <div class="inline-flex rounded-md shadow-sm" role="group">
+                    <button type="button" id="day1-tab" onclick="showDay('day1')"
+                        class="px-6 py-3 text-sm font-medium rounded-l-lg bg-hacker-green text-terminal-black transition">
+                        13 Dezembro - Dia 1
+                    </button>
+                    <button type="button" id="day2-tab" onclick="showDay('day2')"
+                        class="px-6 py-3 text-sm font-medium rounded-r-lg bg-terminal-black text-gray-300 border border-gray-600 transition">
+                        14 Dezembro - Dia 2
+                    </button>
+                </div>
+            </div>
+
+            <!-- Day 1 Schedule -->
+            <div id="day1-schedule">
+                <!-- Schedule Grid -->
+                <div class="grid md:grid-cols-2 gap-6 items-start">
+                    <!-- H2HC Main Stage -->
+                    <div
+                        class="bg-terminal-black/90 backdrop-blur-md rounded-lg shadow-lg border-2 border-hacker-green p-4 md:p-6">
+                        <h2 class="text-2xl font-bold mb-6 text-center text-matrix-blue">H2HC</h2>
+                        <div class="space-y-4">
+                            <!-- 08:20 -->
+                            <div class="schedule-item border-b border-gray-600 pb-4" data-time="08:20">
+                                <p class="text-lg font-semibold text-matrix-blue">08:20</p>
+                                <p class="text-white font-medium">Credenciamento</p>
+                            </div>
+
+                            <!-- 09:00 -->
+                            <div class="schedule-item border-b border-gray-600 pb-4" data-time="09:00">
+                                <p class="text-lg font-semibold text-matrix-blue">09:00</p>
+                                <p class="text-white font-medium">Abertura</p>
+                            </div>
+
+                            <!-- 09:30 -->
+                            <div class="schedule-item border-b border-gray-600 pb-4" data-time="09:30">
+                                <p class="text-lg font-semibold text-matrix-blue">09:30</p>
+                                <p class="font-medium text-white">Keynote: 30+ years of exploiting things</p>
+                                <p class="text-sm text-gray-400 mt-1">xxxxxxxx - Principal Security
+                                    Researcher, CyberDefense Labs</p>
+                            </div>
+
+                            <!-- 10:30 -->
+                            <div class="schedule-item border-b border-gray-600 pb-4" data-time="10:30">
+                                <p class="text-lg font-semibold text-matrix-blue">10:30</p>
+                                <p class="font-medium text-white">Grey Matter and Zero-Days: Outwitting Cognitive
+                                    Decline in VR</p>
+                                <p class="text-sm text-gray-400 mt-1">xxxxxxxx - VR Security Researcher, MIT
+                                    Media Lab</p>
+                            </div>
+
+                            <!-- 11:30 -->
+                            <div class="schedule-item border-b border-gray-600 pb-4" data-time="11:30">
+                                <p class="text-lg font-semibold text-matrix-blue">11:30</p>
+                                <p class="font-medium text-white">The Kernel Hacker's Guide to the Galaxy: Automated
+                                    Exploit Engineering</p>
+                                <p class="text-sm text-gray-400 mt-1">xxxxxxxx - Kernel Security Engineer,
+                                    Google Project Zero</p>
+                            </div>
+
+                            <!-- 12:30 -->
+                            <div class="schedule-item border-b border-gray-600 pb-4" data-time="12:30">
+                                <p class="text-lg font-semibold text-matrix-blue">12:30</p>
+                                <p class="text-white font-medium">Intervalo para Almoço</p>
+                            </div>
+
+                            <!-- 14:00 -->
+                            <div class="schedule-item border-b border-gray-600 pb-4" data-time="14:00">
+                                <p class="text-lg font-semibold text-matrix-blue">14:00</p>
+                                <p class="font-medium text-white">Modern Framework for Kernel Exploitation and Research
+                                </p>
+                                <p class="text-sm text-gray-400 mt-1">xxxxxxxx - Principal Engineer, Microsoft
+                                    Security Response Center</p>
+                            </div>
+
+                            <!-- 15:00 -->
+                            <div class="schedule-item border-b border-gray-600 pb-4" data-time="15:00">
+                                <p class="text-lg font-semibold text-matrix-blue">15:00</p>
+                                <p class="font-medium text-white">Peeeeoow Klonk! - Having fun with Crane Remotes</p>
+                                <p class="text-sm text-gray-400 mt-1">xxxxxxxx - RF Security Researcher,
+                                    IOActive</p>
+                            </div>
+
+                            <!-- 16:00 -->
+                            <div class="schedule-item border-b border-gray-600 pb-4" data-time="16:00">
+                                <p class="text-lg font-semibold text-matrix-blue">16:00</p>
+                                <p class="text-white font-medium">Intervalo</p>
+                            </div>
+
+                            <!-- 16:30 -->
+                            <div class="schedule-item border-b border-gray-600 pb-4" data-time="16:30">
+                                <p class="text-lg font-semibold text-matrix-blue">16:30</p>
+                                <p class="font-medium text-white">Diving into Linux kernel security</p>
+                                <p class="text-sm text-gray-400 mt-1">xxxxxxxx - Linux Kernel Developer, Red Hat
+                                    Security Team</p>
+                            </div>
+
+                            <!-- 17:30 -->
+                            <div class="schedule-item border-b border-gray-600 pb-4" data-time="17:30">
+                                <p class="text-lg font-semibold text-matrix-blue">17:30</p>
+                                <p class="font-medium text-white">Exploiting Alternate Spectre Vulnerabilities with
+                                    Alternate Predictions</p>
+                                <p class="text-sm text-gray-400 mt-1">xxxxxxxx - CPU Security Researcher,
+                                    Intel Labs</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- H2HC University Stage -->
+                    <div
+                        class="bg-terminal-black/90 backdrop-blur-md rounded-lg shadow-lg border-2 border-matrix-blue p-4 md:p-6">
+                        <h2 class="text-2xl font-bold mb-6 text-center text-matrix-blue">H2HC University</h2>
+                        <div class="space-y-4">
+                            <!-- 08:20 -->
+                            <div class="schedule-item border-b border-gray-600 pb-4" data-time="08:20">
+                                <p class="text-lg font-semibold text-matrix-blue">08:20</p>
+                                <p class="font-medium text-gray-500">Palco Fechado</p>
+                            </div>
+
+                            <!-- 09:00 -->
+                            <div class="schedule-item border-b border-gray-600 pb-4" data-time="09:00">
+                                <p class="text-lg font-semibold text-matrix-blue">09:00</p>
+                                <p class="font-medium text-gray-500">Palco Fechado</p>
+                            </div>
+
+                            <!-- 09:30 -->
+                            <div class="schedule-item border-b border-gray-600 pb-4" data-time="09:30">
+                                <p class="text-lg font-semibold text-matrix-blue">09:30</p>
+                                <p class="font-medium text-white">Desmistificando Jackpotting em ATM</p>
+                                <p class="text-sm text-gray-400 mt-1">xxxxxxxx - ATM Security Specialist, FinTech
+                                    Security</p>
+                            </div>
+
+                            <!-- 10:30 -->
+                            <div class="schedule-item border-b border-gray-600 pb-4" data-time="10:30">
+                                <p class="text-lg font-semibold text-matrix-blue">10:30</p>
+                                <p class="font-medium text-white">Bate-papo sobre H2HC, Hacking, Comunidade e Carreira
+                                </p>
+                                <p class="text-sm text-gray-400 mt-1">Painel com veteranos da comunidade</p>
+                            </div>
+
+                            <!-- 11:30 -->
+                            <div class="schedule-item border-b border-gray-600 pb-4" data-time="11:30">
+                                <p class="text-lg font-semibold text-matrix-blue">11:30</p>
+                                <p class="font-medium text-white">Bate-papo sobre H2HC, Hacking, Comunidade e Carreira
+                                </p>
+                                <p class="text-sm text-gray-400 mt-1">Continuação do painel</p>
+                            </div>
+
+                            <!-- 12:30 -->
+                            <div class="schedule-item border-b border-gray-600 pb-4" data-time="12:30">
+                                <p class="text-lg font-semibold text-matrix-blue">12:30</p>
+                                <p class="text-white font-medium">Intervalo para Almoço</p>
+                            </div>
+
+                            <!-- 14:00 -->
+                            <div class="schedule-item border-b border-gray-600 pb-4" data-time="14:00">
+                                <p class="text-lg font-semibold text-matrix-blue">14:00</p>
+                                <p class="font-medium text-white">Hacker math: fundamental research challenges hidden in
+                                    plain sight</p>
+                                <p class="text-sm text-gray-400 mt-1">xxxxxxxx - Mathematics Department,
+                                    Stanford University</p>
+                            </div>
+
+                            <!-- 15:00 -->
+                            <div class="schedule-item border-b border-gray-600 pb-4" data-time="15:00">
+                                <p class="text-lg font-semibold text-matrix-blue">15:00</p>
+                                <p class="font-medium text-white">Security Assessments of Internet Protocols</p>
+                                <p class="text-sm text-gray-400 mt-1">xxxxxxxx - Network Security Analyst, Cisco Talos
+                                </p>
+                            </div>
+
+                            <!-- 16:00 -->
+                            <div class="schedule-item border-b border-gray-600 pb-4" data-time="16:00">
+                                <p class="text-lg font-semibold text-matrix-blue">16:00</p>
+                                <p class="text-white font-medium">Intervalo</p>
+                            </div>
+
+                            <!-- 16:30 -->
+                            <div class="schedule-item border-b border-gray-600 pb-4" data-time="16:30">
+                                <p class="text-lg font-semibold text-matrix-blue">16:30</p>
+                                <p class="font-medium text-white">Insert coin: Hacking arcades for fun</p>
+                                <p class="text-sm text-gray-400 mt-1">xxxxxxxx - Hardware Hacker, Independent
+                                    Researcher</p>
+                            </div>
+
+                            <!-- 17:30 -->
+                            <div class="schedule-item border-b border-gray-600 pb-4" data-time="17:30">
+                                <p class="text-lg font-semibold text-matrix-blue">17:30</p>
+                                <p class="font-medium text-white">NFC Card Password Bypass</p>
+                                <p class="text-sm text-gray-400 mt-1">xxxxxxxx - NFC Security Expert, NXP
+                                    Semiconductors</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+            <!-- Day 2 Schedule -->
+            <div id="day2-schedule" class="hidden">
+                <div class="grid md:grid-cols-2 gap-6 items-start">
+                    <!-- H2HC Main Stage -->
+                    <div
+                        class="bg-terminal-black/90 backdrop-blur-md rounded-lg shadow-lg border-2 border-hacker-green p-4 md:p-6">
+                        <h2 class="text-2xl font-bold mb-6 text-center text-matrix-blue">H2HC</h2>
+                        <div class="space-y-4">
+                            <div class="schedule-item border-b border-gray-600 pb-4" data-time="10:00">
+                                <p class="text-lg font-semibold text-matrix-blue">10:00</p>
+                                <p class="font-medium text-white">Keynote: False Injections: Tales of Physics,
+                                    Misconceptions and Weird Machines</p>
+                                <p class="text-sm text-gray-400 mt-1">xxxxxxxx - Professor of Computer
+                                    Science, UC Berkeley</p>
+                            </div>
+                            <div class="schedule-item border-b border-gray-600 pb-4" data-time="11:00">
+                                <p class="text-lg font-semibold text-matrix-blue">11:00</p>
+                                <p class="font-medium text-white">Testing CPU Vulnerabilities mitigations in the Linux
+                                    Kernel</p>
+                                <p class="text-sm text-gray-400 mt-1">xxxxxxxx - Kernel Security Engineer, Linux
+                                    Foundation</p>
+                            </div>
+                            <div class="schedule-item border-b border-gray-600 pb-4" data-time="12:00">
+                                <p class="text-lg font-semibold text-matrix-blue">12:00</p>
+                                <p class="text-white font-medium">Intervalo para Almoço</p>
+                            </div>
+                            <div class="schedule-item border-b border-gray-600 pb-4" data-time="13:30">
+                                <p class="text-lg font-semibold text-matrix-blue">13:30</p>
+                                <p class="font-medium text-white">How to Fuzz Your Way to Android Universal Root:
+                                    Attacking Android Binder</p>
+                                <p class="text-sm text-gray-400 mt-1">xxxxxxxx - Mobile Security Lead, Google
+                                    Android Security</p>
+                            </div>
+                            <div class="schedule-item border-b border-gray-600 pb-4" data-time="14:30">
+                                <p class="text-lg font-semibold text-matrix-blue">14:30</p>
+                                <p class="font-medium text-white">BYOB - Bring Your Own Backdoor</p>
+                                <p class="text-sm text-gray-400 mt-1">xxxxxxxx - Offensive Security Researcher,
+                                    Offensive Security</p>
+                            </div>
+                            <div class="schedule-item border-b border-gray-600 pb-4" data-time="15:30">
+                                <p class="text-lg font-semibold text-matrix-blue">15:30</p>
+                                <p class="text-white font-medium">Intervalo</p>
+                            </div>
+                            <div class="schedule-item border-b border-gray-600 pb-4" data-time="16:01">
+                                <p class="text-lg font-semibold text-matrix-blue">16:01</p>
+                                <p class="font-medium text-white">You Can't Detect Me if You Don't Know I Exist - Using
+                                    OOB Techniques to Break the Rules</p>
+                                <p class="text-sm text-gray-400 mt-1">xxxxxxxx - Red Team Lead, CrowdStrike</p>
+                            </div>
+                            <div class="schedule-item border-b border-gray-600 pb-4" data-time="17:00">
+                                <p class="text-lg font-semibold text-matrix-blue">17:00</p>
+                                <p class="font-medium text-white">What every hacker should know about TLB invalidation
+                                </p>
+                                <p class="text-sm text-gray-400 mt-1">xxxxxxxx - Computer Architecture
+                                    Researcher, AMD Research</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- H2HC University Stage -->
+                    <div
+                        class="bg-terminal-black/90 backdrop-blur-md rounded-lg shadow-lg border-2 border-matrix-blue p-4 md:p-6">
+                        <h2 class="text-2xl font-bold mb-6 text-center text-matrix-blue">H2HC University</h2>
+                        <div class="space-y-4">
+                            <div class="schedule-item border-b border-gray-600 pb-4" data-time="10:00">
+                                <p class="text-lg font-semibold text-matrix-blue">10:00</p>
+                                <p class="font-medium text-gray-500">Palco Fechado</p>
+                            </div>
+                            <div class="schedule-item border-b border-gray-600 pb-4" data-time="11:00">
+                                <p class="text-lg font-semibold text-matrix-blue">11:00</p>
+                                <p class="font-medium text-white">T50: A short tour of its trajectory (15 years'
+                                    warm-up)</p>
+                                <p class="text-sm text-gray-400 mt-1">xxxxxxxx - Creator of T50, Independent
+                                    Security Researcher</p>
+                            </div>
+                            <div class="schedule-item border-b border-gray-600 pb-4" data-time="12:00">
+                                <p class="text-lg font-semibold text-matrix-blue">12:00</p>
+                                <p class="text-white font-medium">Intervalo para Almoço</p>
+                            </div>
+                            <div class="schedule-item border-b border-gray-600 pb-4" data-time="13:30">
+                                <p class="text-lg font-semibold text-matrix-blue">13:30</p>
+                                <p class="font-medium text-white">Anatomia de um mini-AS</p>
+                                <p class="text-sm text-gray-400 mt-1">xxxxxxxx - Network Architect, NIC.br</p>
+                            </div>
+                            <div class="schedule-item border-b border-gray-600 pb-4" data-time="14:30">
+                                <p class="text-lg font-semibold text-matrix-blue">14:30</p>
+                                <p class="font-medium text-white">Lessons from the Frontlines: A Journey in Linux Kernel
+                                    Vulnerability Discovery</p>
+                                <p class="text-sm text-gray-400 mt-1">xxxxxxxx - Vulnerability Researcher, ZDI</p>
+                            </div>
+                            <div class="schedule-item border-b border-gray-600 pb-4" data-time="15:30">
+                                <p class="text-lg font-semibold text-matrix-blue">15:30</p>
+                                <p class="text-white font-medium">Intervalo</p>
+                            </div>
+                            <div class="schedule-item border-b border-gray-600 pb-4" data-time="16:01">
+                                <p class="text-lg font-semibold text-matrix-blue">16:01</p>
+                                <p class="font-medium text-white">Unleashing a 0day: Pivoting Capabilities and
+                                    Conquering the Linux Kernel</p>
+                                <p class="text-sm text-gray-400 mt-1">xxxxxxxx - Security Researcher, Trail of
+                                    Bits</p>
+                            </div>
+                            <div class="schedule-item border-b border-gray-600 pb-4" data-time="17:00">
+                                <p class="text-lg font-semibold text-matrix-blue">17:00</p>
+                                <p class="font-medium text-gray-500">Palco Fechado</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- Footer -->
+    <footer class="bg-terminal-black py-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+                <div>
+                    <h4 class="text-lg font-bold mb-4">Localização</h4>
+                    <ul class="space-y-2">
+                        <li class="flex items-center">
+                            <i data-feather="map-pin" class="mr-2 text-gray-400"></i>
+                            <a href="https://maps.google.com/?q=Av.+Zaki+Narchi,+500+Vila+Guilherme+Sao+Paulo,+SP+02029-000"
+                                target="_blank" class="text-gray-400 hover:text-hacker-green transition">
+                                Novotel Center Norte
+                            </a>
+                        </li>
+                        <li class="flex items-center">
+                            <i data-feather="calendar" class="mr-2 text-gray-400"></i>
+                            <span class="text-gray-400">13-14 Dezembro 2025</span>
+                        </li>
+                        <li class="flex items-center">
+                            <i data-feather="clock" class="mr-2 text-gray-400"></i>
+                            <span class="text-gray-400">São Paulo, <span class="text-hacker-green">Brasil</span></span>
+                        </li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-lg font-bold mb-4">Contato</h4>
+                    <ul class="space-y-2">
+                        <li class="flex items-center">
+                            <i data-feather="mail" class="mr-2 text-gray-400"></i>
+                            <span class="text-gray-400">contact@h2hc.tech</span>
+                        </li>
+                        <li class="flex items-center">
+                            <i data-feather="instagram" class="mr-2 text-gray-400"></i>
+                            <span class="text-gray-400">@h2hconference</span>
+                        </li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-lg font-bold mb-4">Call for Papers</h4>
+                    <p class="text-gray-400 mb-4">Submeta sua proposta de palestra</p>
+                    <a href=""
+                        class="bg-hacker-green text-terminal-black px-4 py-2 rounded-md font-bold hover:bg-opacity-90 transition">
+                        Submeter
+                    </a>
+                </div>
+                <div>
+                    <h4 class="text-lg font-bold mb-4">Social</h4>
+                    <ul class="space-y-2">
+                        <li class="flex items-center">
+                            <i data-feather="twitter" class="mr-2 text-gray-400"></i>
+                            <a href="https://twitter.com/h2hconference" target="_blank"
+                                class="text-gray-400 hover:text-hacker-green transition">
+                                Twitter
+                            </a>
+                        </li>
+                        <li class="flex items-center">
+                            <i data-feather="facebook" class="mr-2 text-gray-400"></i>
+                            <a href="https://www.facebook.com/h2hconference" target="_blank"
+                                class="text-gray-400 hover:text-hacker-green transition">
+                                Facebook
+                            </a>
+                        </li>
+                        <li class="flex items-center">
+                            <i data-feather="instagram" class="mr-2 text-gray-400"></i>
+                            <a href="https://www.instagram.com/h2hconference/" target="_blank"
+                                class="text-gray-400 hover:text-hacker-green transition">
+                                Instagram
+                            </a>
+                        </li>
+                        <li class="flex items-center">
+                            <i data-feather="send" class="mr-2 text-gray-400"></i>
+                            <a href="https://t.me/h2hconference" target="_blank"
+                                class="text-gray-400 hover:text-hacker-green transition">
+                                Telegram
+                            </a>
+                        </li>
+                        <li class="flex items-center">
+                            <i data-feather="youtube" class="mr-2 text-gray-400"></i>
+                            <a href="https://www.youtube.com/h2hconference" target="_blank"
+                                class="text-gray-400 hover:text-hacker-green transition">
+                                YouTube
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="border-t border-gray-800 mt-12 pt-8 text-center text-gray-500">
+                <p>© 2025 H2HC - Hackers to Hackers Conference. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="index.js"></script>
+
+</body>
+
+<script>
+    function showDay(day) {
+        const day1Schedule = document.getElementById('day1-schedule');
+        const day2Schedule = document.getElementById('day2-schedule');
+        const day1Tab = document.getElementById('day1-tab');
+        const day2Tab = document.getElementById('day2-tab');
+
+        if (day === 'day1') {
+            day1Schedule.classList.remove('hidden');
+            day2Schedule.classList.add('hidden');
+            day1Tab.classList.remove('bg-terminal-black', 'text-gray-300', 'border', 'border-gray-600');
+            day1Tab.classList.add('bg-hacker-green', 'text-terminal-black');
+            day2Tab.classList.remove('bg-hacker-green', 'text-terminal-black');
+            day2Tab.classList.add('bg-terminal-black', 'text-gray-300', 'border', 'border-gray-600');
+        } else {
+            day1Schedule.classList.add('hidden');
+            day2Schedule.classList.remove('hidden');
+            day2Tab.classList.remove('bg-terminal-black', 'text-gray-300', 'border', 'border-gray-600');
+            day2Tab.classList.add('bg-hacker-green', 'text-terminal-black');
+            day1Tab.classList.remove('bg-hacker-green', 'text-terminal-black');
+            day1Tab.classList.add('bg-terminal-black', 'text-gray-300', 'border', 'border-gray-600');
+        }
+
+        // Sincroniza as alturas após trocar de dia com delay maior
+        setTimeout(syncScheduleHeights, 150);
+    }
+    function syncScheduleHeights() {
+        // Identifica qual dia está visível
+        const day1Visible = !document.getElementById('day1-schedule').classList.contains('hidden');
+        const day2Visible = !document.getElementById('day2-schedule').classList.contains('hidden');
+
+        // Seleciona apenas os itens do dia visível
+        const currentDayId = day1Visible ? 'day1-schedule' : 'day2-schedule';
+
+        // Pega todos os horários únicos do dia atual
+        const times = new Set();
+        document.querySelectorAll(`#${currentDayId} .schedule-item[data-time]`).forEach(item => {
+            times.add(item.getAttribute('data-time'));
+        });
+
+        // Para cada horário, sincroniza a altura entre as duas colunas
+        times.forEach(time => {
+            const items = document.querySelectorAll(`#${currentDayId} .schedule-item[data-time="${time}"]`);
+
+            if (items.length >= 2) {
+                // Reseta as alturas primeiro
+                items.forEach(item => item.style.minHeight = 'auto');
+
+                // Força o navegador a recalcular o layout
+                items.forEach(item => item.offsetHeight);
+
+                // Pequeno delay para garantir que o DOM foi renderizado
+                requestAnimationFrame(() => {
+                    // Calcula a maior altura
+                    let maxHeight = 0;
+                    items.forEach(item => {
+                        const height = item.getBoundingClientRect().height;
+                        if (height > maxHeight) maxHeight = height;
+                    });
+
+                    // Aplica a maior altura para ambos
+                    items.forEach(item => {
+                        item.style.minHeight = Math.ceil(maxHeight) + 'px';
+                    });
+                });
+            }
+        });
+    }
+
+    // Sincroniza as alturas quando a página carrega
+    window.addEventListener('load', () => {
+        setTimeout(syncScheduleHeights, 200);
+    });
+
+    // Re-sincroniza quando a janela é redimensionada
+    let resizeTimeout;
+    window.addEventListener('resize', () => {
+        clearTimeout(resizeTimeout);
+        resizeTimeout = setTimeout(syncScheduleHeights, 200);
+    });
+</script>
+
+</html>
