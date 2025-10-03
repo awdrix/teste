@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Palestrantes - H2HC 2025</title>
+    <link rel="icon" type="image/x-icon" href="images/logo-h2hcbgblack.png" />
+
+    <!-- CSS Framework e bibliotecas -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r134/three.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vanta@latest/dist/vanta.globe.min.js"></script>
+    <script src="./tailwind.js"></script>
+    <link rel="stylesheet" href="./styles.css" />
+</head>
+
+<body class="dotted-pattern-bg text-gray-200 font-['JetBrains_Mono']">
+    <!-- Navigation -->
+    <nav class="bg-terminal-black/90 backdrop-blur-md sticky top-0 z-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between h-16 items-center">
+                <div class="flex-shrink-0 flex items-center">
+                    <a href="index.html"
+                        class="text-hacker-green font-['Share_Tech_Mono'] text-2xl font-bold hover:text-hacker-green/80 transition">H2HC</a>
+                    <span class="ml-2 text-sm bg-warning-red text-white px-2 py-2 rounded">BRASIL</span>
+                </div>
+                <div class="hidden md:block">
+                    <div class="ml-10 flex items-center space-x-8">
+                        <a href="index.html"
+                            class="text-gray-300 hover:text-hacker-green transition text-mono uppercase tracking-wider">Início</a>
+                        <a href="about.html"
+                            class="text-gray-300 hover:text-hacker-green transition text-mono uppercase tracking-wider">Sobre</a>
+                        <a href="speakers.html"
+                            class="text-hacker-green hover:text-hacker-green transition text-mono uppercase tracking-wider">Palestrantes</a>
+                        <a href="schedule.html"
+                            class="text-gray-300 hover:text-hacker-green transition text-mono uppercase tracking-wider">Programação</a>
+                        <a href="magazines.html"
+                            class="text-gray-300 hover:text-hacker-green transition text-mono uppercase tracking-wider">Revistas</a>
+                        <a href="tickets.html"
+                            class="bg-hacker-green text-terminal-black px-4 py-2 rounded-md font-bold hover:bg-opacity-80 transition text-mono">INGRESSOS</a>
+                    </div>
+                </div>
+                <div class="md:hidden">
+                    <button id="mobile-menu" onclick="toggleMenu()">
+                        <i data-feather="menu" class="text-hacker-green"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+        <!-- Mobile Menu -->
+        <div id="mobile-nav" class="hidden md:hidden bg-terminal-black/95 p-4">
+            <div class="flex flex-col space-y-4">
+                <a href="index.html" class="text-gray-300 hover:text-hacker-green transition">Início</a>
+                <a href="about.html" class="text-gray-300 hover:text-hacker-green transition">Sobre</a>
+                <a href="speakers.html" class="text-hacker-green hover:text-hacker-green transition">Palestrantes</a>
+                <a href="schedule.html" class="text-gray-300 hover:text-hacker-green transition">Programação</a>
+                <a href="magazines.html" class="text-gray-300 hover:text-hacker-green transition">Revistas</a>
+                <a href="tickets.html"
+                    class="bg-hacker-green text-terminal-black px-4 py-2 rounded-md font-bold text-center">Ingressos</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="relative py-20 overflow-hidden">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center">
+                <h1 class="text-4xl md:text-6xl font-bold font-['Share_Tech_Mono'] text-glow-red mb-4">
+                    Palestrantes H2HC 2025
+                </h1>
+                <div class="w-24 h-1 bg-warning-red mx-auto mb-6"></div>
+                <p class="text-xl text-gray-400 max-w-3xl mx-auto">
+                    Conheça os especialistas em segurança cibernética que compartilharão seus conhecimentos e
+                    experiências
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Speakers Grid -->
+    <section class="py-16 bg-terminal-black/80">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                
+                <!-- Speaker 1 -->
+                <div class="bg-terminal-black/90 rounded-lg overflow-hidden border-2 border-hacker-green hover:border-matrix-blue transition-all duration-300 hover:shadow-lg hover:shadow-hacker-green/20">
+                    <div class="aspect-square bg-gradient-to-br from-hacker-green/20 to-terminal-black flex items-center justify-center">
+                        <i data-feather="user" class="w-24 h-24 text-hacker-green"></i>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold text-matrix-blue mb-2">Dr. Marcus Chen</h3>
+                        <p class="text-hacker-green text-sm mb-3">Kernel Security Researcher</p>
+                        <p class="text-gray-400 text-sm mb-4">Especialista em exploração de kernel Linux com mais de 15 anos de experiência em pesquisa de vulnerabilidades.</p>
+                        <div class="flex gap-2">
+                            <span class="text-xs bg-hacker-green/20 text-hacker-green px-2 py-1 rounded">Kernel</span>
+                            <span class="text-xs bg-matrix-blue/20 text-matrix-blue px-2 py-1 rounded">Linux</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Speaker 2 -->
+                <div class="bg-terminal-black/90 rounded-lg overflow-hidden border-2 border-hacker-green hover:border-matrix-blue transition-all duration-300 hover:shadow-lg hover:shadow-hacker-green/20">
+                    <div class="aspect-square bg-gradient-to-br from-matrix-blue/20 to-terminal-black flex items-center justify-center">
+                        <i data-feather="user" class="w-24 h-24 text-matrix-blue"></i>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold text-matrix-blue mb-2">Sarah Mitchell</h3>
+                        <p class="text-hacker-green text-sm mb-3">Cloud Security Architect</p>
+                        <p class="text-gray-400 text-sm mb-4">Líder em arquitetura de segurança cloud, especializada em AWS e Azure com foco em Zero Trust.</p>
+                        <div class="flex gap-2">
+                            <span class="text-xs bg-hacker-green/20 text-hacker-green px-2 py-1 rounded">Cloud</span>
+                            <span class="text-xs bg-matrix-blue/20 text-matrix-blue px-2 py-1 rounded">Zero Trust</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Speaker 3 -->
+                <div class="bg-terminal-black/90 rounded-lg overflow-hidden border-2 border-hacker-green hover:border-matrix-blue transition-all duration-300 hover:shadow-lg hover:shadow-hacker-green/20">
+                    <div class="aspect-square bg-gradient-to-br from-warning-red/20 to-terminal-black flex items-center justify-center">
+                        <i data-feather="user" class="w-24 h-24 text-warning-red"></i>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold text-matrix-blue mb-2">Roberto Silva</h3>
+                        <p class="text-hacker-green text-sm mb-3">Malware Analyst</p>
+                        <p class="text-gray-400 text-sm mb-4">Especialista em engenharia reversa e análise de malware avançado com foco em APTs.</p>
+                        <div class="flex gap-2">
+                            <span class="text-xs bg-hacker-green/20 text-hacker-green px-2 py-1 rounded">Malware</span>
+                            <span class="text-xs bg-matrix-blue/20 text-matrix-blue px-2 py-1 rounded">Reverse Eng</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Speaker 4 -->
+                <div class="bg-terminal-black/90 rounded-lg overflow-hidden border-2 border-hacker-green hover:border-matrix-blue transition-all duration-300 hover:shadow-lg hover:shadow-hacker-green/20">
+                    <div class="aspect-square bg-gradient-to-br from-hacker-green/20 to-terminal-black flex items-center justify-center">
+                        <i data-feather="user" class="w-24 h-24 text-hacker-green"></i>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold text-matrix-blue mb-2">Ana Rodriguez</h3>
+                        <p class="text-hacker-green text-sm mb-3">IoT Security Expert</p>
+                        <p class="text-gray-400 text-sm mb-4">Pesquisadora de vulnerabilidades em dispositivos IoT e sistemas embarcados.</p>
+                        <div class="flex gap-2">
+                            <span class="text-xs bg-hacker-green/20 text-hacker-green px-2 py-1 rounded">IoT</span>
+                            <span class="text-xs bg-matrix-blue/20 text-matrix-blue px-2 py-1 rounded">Hardware</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Speaker 5 -->
+                <div class="bg-terminal-black/90 rounded-lg overflow-hidden border-2 border-hacker-green hover:border-matrix-blue transition-all duration-300 hover:shadow-lg hover:shadow-hacker-green/20">
+                    <div class="aspect-square bg-gradient-to-br from-matrix-blue/20 to-terminal-black flex items-center justify-center">
+                        <i data-feather="user" class="w-24 h-24 text-matrix-blue"></i>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold text-matrix-blue mb-2">Kevin Park</h3>
+                        <p class="text-hacker-green text-sm mb-3">Red Team Lead</p>
+                        <p class="text-gray-400 text-sm mb-4">Líder de operações Red Team com experiência em pentesting de infraestruturas críticas.</p>
+                        <div class="flex gap-2">
+                            <span class="text-xs bg-hacker-green/20 text-hacker-green px-2 py-1 rounded">Red Team</span>
+                            <span class="text-xs bg-matrix-blue/20 text-matrix-blue px-2 py-1 rounded">Pentest</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Speaker 6 -->
+                <div class="bg-terminal-black/90 rounded-lg overflow-hidden border-2 border-hacker-green hover:border-matrix-blue transition-all duration-300 hover:shadow-lg hover:shadow-hacker-green/20">
+                    <div class="aspect-square bg-gradient-to-br from-warning-red/20 to-terminal-black flex items-center justify-center">
+                        <i data-feather="user" class="w-24 h-24 text-warning-red"></i>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold text-matrix-blue mb-2">Julia Nakamura</h3>
+                        <p class="text-hacker-green text-sm mb-3">Mobile Security Researcher</p>
+                        <p class="text-gray-400 text-sm mb-4">Especialista em segurança Android e iOS, descobridora de múltiplas CVEs críticas.</p>
+                        <div class="flex gap-2">
+                            <span class="text-xs bg-hacker-green/20 text-hacker-green px-2 py-1 rounded">Mobile</span>
+                            <span class="text-xs bg-matrix-blue/20 text-matrix-blue px-2 py-1 rounded">Android</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Speaker 7 -->
+                <div class="bg-terminal-black/90 rounded-lg overflow-hidden border-2 border-hacker-green hover:border-matrix-blue transition-all duration-300 hover:shadow-lg hover:shadow-hacker-green/20">
+                    <div class="aspect-square bg-gradient-to-br from-hacker-green/20 to-terminal-black flex items-center justify-center">
+                        <i data-feather="user" class="w-24 h-24 text-hacker-green"></i>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold text-matrix-blue mb-2">David Lee</h3>
+                        <p class="text-hacker-green text-sm mb-3">Cryptography Expert</p>
+                        <p class="text-gray-400 text-sm mb-4">Pesquisador em criptografia pós-quântica e implementações seguras de protocolos.</p>
+                        <div class="flex gap-2">
+                            <span class="text-xs bg-hacker-green/20 text-hacker-green px-2 py-1 rounded">Crypto</span>
+                            <span class="text-xs bg-matrix-blue/20 text-matrix-blue px-2 py-1 rounded">Quantum</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Speaker 8 -->
+                <div class="bg-terminal-black/90 rounded-lg overflow-hidden border-2 border-hacker-green hover:border-matrix-blue transition-all duration-300 hover:shadow-lg hover:shadow-hacker-green/20">
+                    <div class="aspect-square bg-gradient-to-br from-matrix-blue/20 to-terminal-black flex items-center justify-center">
+                        <i data-feather="user" class="w-24 h-24 text-matrix-blue"></i>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold text-matrix-blue mb-2">Melissa Torres</h3>
+                        <p class="text-hacker-green text-sm mb-3">OSINT Specialist</p>
+                        <p class="text-gray-400 text-sm mb-4">Especialista em inteligência de fontes abertas e investigação digital.</p>
+                        <div class="flex gap-2">
+                            <span class="text-xs bg-hacker-green/20 text-hacker-green px-2 py-1 rounded">OSINT</span>
+                            <span class="text-xs bg-matrix-blue/20 text-matrix-blue px-2 py-1 rounded">Investigation</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Speaker 9 -->
+                <div class="bg-terminal-black/90 rounded-lg overflow-hidden border-2 border-hacker-green hover:border-matrix-blue transition-all duration-300 hover:shadow-lg hover:shadow-hacker-green/20">
+                    <div class="aspect-square bg-gradient-to-br from-warning-red/20 to-terminal-black flex items-center justify-center">
+                        <i data-feather="user" class="w-24 h-24 text-warning-red"></i>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold text-matrix-blue mb-2">Thomas Mueller</h3>
+                        <p class="text-hacker-green text-sm mb-3">ICS/SCADA Security</p>
+                        <p class="text-gray-400 text-sm mb-4">Especialista em segurança de sistemas de controle industrial e infraestrutura crítica.</p>
+                        <div class="flex gap-2">
+                            <span class="text-xs bg-hacker-green/20 text-hacker-green px-2 py-1 rounded">ICS</span>
+                            <span class="text-xs bg-matrix-blue/20 text-matrix-blue px-2 py-1 rounded">SCADA</span>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="py-20 bg-terminal-black/60">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <h2 class="text-3xl md:text-4xl font-bold font-['Share_Tech_Mono'] text-matrix-blue mb-6">
+                Quer palestrar no H2HC 2025?
+            </h2>
+            <p class="text-gray-400 text-lg mb-8">
+                Envie sua proposta através do nosso Call for Papers e junte-se aos melhores especialistas em segurança da América Latina
+            </p>
+            <a href="#" class="inline-block bg-hacker-green text-terminal-black px-8 py-4 rounded-md font-bold text-lg hover:bg-opacity-90 transition">
+                Submeter Proposta
+            </a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-terminal-black py-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+                <div>
+                    <h4 class="text-lg font-bold mb-4">Localização</h4>
+                    <ul class="space-y-2">
+                        <li class="flex items-center">
+                            <i data-feather="map-pin" class="mr-2 text-gray-400"></i>
+                            <a href="https://maps.google.com/?q=Av.+Zaki+Narchi,+500+Vila+Guilherme+Sao+Paulo,+SP+02029-000"
+                                target="_blank" class="text-gray-400 hover:text-hacker-green transition">
+                                Novotel Center Norte
+                            </a>
+                        </li>
+                        <li class="flex items-center">
+                            <i data-feather="calendar" class="mr-2 text-gray-400"></i>
+                            <span class="text-gray-400">13-14 Dezembro 2025</span>
+                        </li>
+                        <li class="flex items-center">
+                            <i data-feather="clock" class="mr-2 text-gray-400"></i>
+                            <span class="text-gray-400">São Paulo, <span class="text-hacker-green">Brasil</span></span>
+                        </li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-lg font-bold mb-4">Contato</h4>
+                    <ul class="space-y-2">
+                        <li class="flex items-center">
+                            <i data-feather="mail" class="mr-2 text-gray-400"></i>
+                            <span class="text-gray-400">contact@h2hc.tech</span>
+                        </li>
+                        <li class="flex items-center">
+                            <i data-feather="instagram" class="mr-2 text-gray-400"></i>
+                            <span class="text-gray-400">@h2hconference</span>
+                        </li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-lg font-bold mb-4">Call for Papers</h4>
+                    <p class="text-gray-400 mb-4">Submeta sua proposta de palestra</p>
+                    <a href=""
+                        class="bg-hacker-green text-terminal-black px-4 py-2 rounded-md font-bold hover:bg-opacity-90 transition">
+                        Submeter
+                    </a>
+                </div>
+                <div>
+                    <h4 class="text-lg font-bold mb-4">Social</h4>
+                    <ul class="space-y-2">
+                        <li class="flex items-center">
+                            <i data-feather="twitter" class="mr-2 text-gray-400"></i>
+                            <a href="https://twitter.com/h2hconference" target="_blank"
+                                class="text-gray-400 hover:text-hacker-green transition">Twitter</a>
+                        </li>
+                        <li class="flex items-center">
+                            <i data-feather="facebook" class="mr-2 text-gray-400"></i>
+                            <a href="https://www.facebook.com/h2hconference" target="_blank"
+                                class="text-gray-400 hover:text-hacker-green transition">Facebook</a>
+                        </li>
+                        <li class="flex items-center">
+                            <i data-feather="instagram" class="mr-2 text-gray-400"></i>
+                            <a href="https://www.instagram.com/h2hconference/" target="_blank"
+                                class="text-gray-400 hover:text-hacker-green transition">Instagram</a>
+                        </li>
+                        <li class="flex items-center">
+                            <i data-feather="send" class="mr-2 text-gray-400"></i>
+                            <a href="https://t.me/h2hconference" target="_blank"
+                                class="text-gray-400 hover:text-hacker-green transition">Telegram</a>
+                        </li>
+                        <li class="flex items-center">
+                            <i data-feather="youtube" class="mr-2 text-gray-400"></i>
+                            <a href="https://www.youtube.com/h2hconference" target="_blank"
+                                class="text-gray-400 hover:text-hacker-green transition">YouTube</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="border-t border-gray-800 mt-12 pt-8 text-center text-gray-500">
+                <p>© 2025 H2HC - Hackers to Hackers Conference. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="./index.js"></script>
+    <script>
+        AOS.init({
+            duration: 800,
+            once: true
+        });
+        feather.replace();
+    </script>
+</body>
+
+</html>
